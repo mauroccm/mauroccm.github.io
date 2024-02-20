@@ -6,7 +6,7 @@
 
 📫 Get in touch:
 
-[![LinkedIn](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/mauroccm/mauroccm.github.io/main/shields.io.endpoints/linkedin.json)](https://www.linkedin.com/in/mauro-cafund%C3%B3-de-morais/) 
+[![LinkedIn](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/mauroccm/mauroccm.github.io/main/shields.io.endpoints/linkedin.json)](https://www.linkedin.com/in/mauro-cafund%C3%B3-de-morais/) [![X](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/mauroccm/mauroccm.github.io/main/shields.io.endpoints/x.json)](https://x.com/mauroccm)
 
 <!--
 Here are some ideas to get you started:

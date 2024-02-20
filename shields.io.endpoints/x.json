@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "label": "!",
-  "namedLogo": "LinkedIn",
+  "namedLogo": "X",
   "logoColor": "white",
-  "message": "LinkedIn",
-  "color": "red",
+  "message": "X",
+  "color": "blue",
   "style": "flat-square"
 }
