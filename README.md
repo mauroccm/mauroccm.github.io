@@ -2,7 +2,7 @@
 
 - Post-doc researcher🔬🖥️ on biomedical images, judoka🥋, knowledge enthusiast🛰️🔭, father, and husband👨‍👩‍👧. Not necessarily in this order.
 
--  Currently working on iomage-based spatial transcriptomics / proteomics analysis on the [Computational Systems Biology Laboratory](https://www.csbiology.org/) at [USP](usp.br).
+-  Currently working on biomage-based spatial transcriptomics / proteomics analysis on the [Computational Systems Biology Laboratory](https://www.csbiology.org/) at [USP](usp.br).
 
 📫 Get in touch:
 
