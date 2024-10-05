@@ -1,21 +1,10 @@
 ### Hello World 👋
 
-- Post-doc researcher🔬🖥️ on biomedical images, judoka🥋, knowledge enthusiast🛰️🔭, father, and husband👨‍👩‍👧. Not necessarily in this order.
-
--  Currently working on biomage-based spatial transcriptomics / proteomics analysis on the [Computational Systems Biology Laboratory](https://www.csbiology.org/) at [USP](usp.br).
-
-📫 Get in touch:
-
-[![LinkedIn](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/mauroccm/mauroccm.github.io/main/shields.io.endpoints/linkedin.json)](https://www.linkedin.com/in/mauro-cafund%C3%B3-de-morais/) [![X](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/mauroccm/mauroccm.github.io/main/shields.io.endpoints/x.json)](https://x.com/mauroccm)
-
-<!--
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- ⚡ Fun fact: ...
--->
+- Post-doc researcher on computational cell bioloogy🔬🖥️ on biomedical images, judoka🥋, knowledge enthusiast🛰️🔭, father, and husband👨‍👩‍👧. Not necessarily in this order.
+- 🔭 I’m currently working on image-based spatial transcriptomics data analysis of non-small cell lung caner (NSCLC) samples in the [Computational Systems Biology Laboratory](https://www.csbiology.org/) at University of Sao Paulo ([USP](usp.br)).
+- 🌱 I’m currently learning adaptive immune cell system interactions.
+- 👯 I’m looking to collaborate on the role of T cells in cancer and autoimmune diseases.
+- 🤔 I’m looking for help with with statistical analysis for different proportions of cellular phenotypes in a population.
+- 💬 Ask me about Machine Learning and Bioimage analysis ideas.
+- 📫 Get in touch: [mauro_morais@usp.br](mailto:mauro_morais@usp.br) or [mauroccm@gmail.com](mailto:mauroccm@gmail.com)
+- ⚡ Fun fact: "The only victory that lasts is the one won over one's own ignorance." Kano Jigoro
