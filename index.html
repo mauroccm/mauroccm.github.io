@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mauro Morais</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="#hello">Hello</a></li>
+                    <!-- <li><a href="#about">About Me</a></li> -->
+                    <li><a href="#archipelago">ArchipelaGO</a></li>
+                    <li><a href="#why">Why?</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="content">
+            <section id="hello">
+                <h1>Hello World</h1>
+                <ul>
+                    <li>👋 Post-doc researcher on computational cell bioloogy🔬🖥️ on biomedical images, judoka🥋, knowledge enthusiast🛰️🔭, father, and husband👨‍👩‍👧. Not necessarily in this order.</li>
+                    <li>🔭 I’m currently working on image-based <a href="#archipelago">spatial transcriptomics</a> data analysis of non-small cell lung caner (NSCLC) samples in the <a href="https://www.csbiology.org/">Computational Systems Biology Laboratory</a> at University of Sao Paulo (<a href="https://www.usp.br/">USP</a>).</li>
+                    <li>🌱 I’m currently learning adaptive immune cell system interactions.</li>
+                    <li>👯 I’m looking to collaborate on the role of T cells in cancer and autoimmune diseases.</li>
+                    <li>🤔 I’m looking for help with with statistical analysis for different proportions of cell types in a population.</li>
+                    <li>💬 Ask me about Machine Learning and Bioimage analysis ideas.</li>
+                </ul>
+                
+            </section>
+
+            <section id="archipelago">
+                <h1>ArchipelaGO</h1>
+                <p>🏝️ ArchipelaGO is an R package designed for the spatial analysis of transcriptomics data, enabling the identification and characterization of spatially enriched regions, or "islands," of gene expression. It works by calculating enrichment scores for user-defined gene sets across spatially resolved cells or spots, revealing the spatial distribution of biological processes and cellular functions within a tissue. Using ArchipelaGO, researchers can uncover cellular and functional heterogeneity, identify co-localization of biological processes, and explore the spatial organization of tumor cells and immune cells within the microenvironment.</p>
+            </section>
+
+            <section id="why">
+                <h1>Why?</h1>
+                <p><img src="./figures/autoimmune_alpha.png" alt="T cell activation"></p>
+            </section>
+
+            <section id="contact">
+                <h1>Contact</h1>
+                <p>📫 Get in touch: <a href="mailto:mauro_morais@usp.br">mauro_morais@usp.br</a> or <a href="mailto:mauroccm@gmail.com">mauroccm@gmail.com</a></p>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

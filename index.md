@@ -8,3 +8,7 @@
 - 💬 Ask me about Machine Learning and Bioimage analysis ideas.
 - 📫 Get in touch: [mauro_morais@usp.br](mailto:mauro_morais@usp.br) or [mauroccm@gmail.com](mailto:mauroccm@gmail.com)
 - ⚡ Fun fact: "The only victory that lasts is the one won over one's own ignorance." Kano Jigoro
+
+#### ArchipelaGO
+
+ArchipelaGO is an R package designed for the spatial analysis of transcriptomics data, enabling the identification and characterization of spatially enriched regions, or "islands," of gene expression. It works by calculating enrichment scores for user-defined gene sets across spatially resolved cells or spots, revealing the spatial distribution of biological processes and cellular functions within a tissue. Using ArchipelaGO, researchers can uncover cellular and functional heterogeneity, identify co-localization of biological processes, and explore the spatial organization of tumor cells and immune cells within the microenvironment.
