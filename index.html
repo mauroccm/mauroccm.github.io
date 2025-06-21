@@ -3,32 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Your Name] - Personal Website</title>
+    <title>Mauro Morais</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Noto Serif JP -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* Custom styles for animations and timeline */
+        /* Custom styles for Japanese Ink theme */
+        :root {
+            --bg-color: #fdfcf9; /* Off-white, like washi paper */
+            --text-color: #3a3a3a; /* Dark gray, like ink */
+            --accent-color: #d96666; /* Pastel Red */
+            --accent-hover-color: #c85555; /* Darker red for hover */
+            --border-color: #e0e0e0;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc; /* gray-50 */
-            color: #1f2937; /* gray-800 */
+            font-family: 'Noto Serif JP', serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
         }
 
         /* Animation for elements fading in on scroll */
         .fade-in-section {
             opacity: 0;
             transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
 
         .fade-in-section.is-visible {
@@ -36,56 +44,77 @@
             transform: translateY(0);
         }
 
+        /* Brush stroke underline for section headers */
+        .section-header {
+            position: relative;
+            padding-bottom: 1rem;
+            margin-bottom: 3rem;
+        }
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 10px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10'%3E%3Cpath d='M0 5 Q 25 2, 50 5 T 100 5' stroke='%23d96666' fill='none' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
         /* Timeline styles for Education section */
         .timeline-item {
             position: relative;
             padding-left: 2.5rem; /* pl-10 */
             padding-bottom: 2rem; /* pb-8 */
+            border-left: 1px solid var(--border-color);
         }
         .timeline-item:last-child {
             padding-bottom: 0;
         }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 0.5rem; /* left-2 */
-            top: 0.25rem; /* top-1 */
-            width: 1px;
-            height: 100%;
-            background-color: #cbd5e1; /* slate-300 */
-        }
         .timeline-dot {
             position: absolute;
-            left: 0;
+            left: -0.5rem; /* Adjust to center on the line */
             top: 0.25rem; /* top-1 */
             width: 1rem; /* w-4 */
             height: 1rem; /* h-4 */
             border-radius: 9999px; /* rounded-full */
-            background-color: #ffffff; /* bg-white */
-            border: 2px solid #3b82f6; /* border-blue-500 */
+            background-color: var(--bg-color); /* bg-white */
+            border: 2px solid var(--accent-color); /* border-red-pastel */
         }
+        
+        /* Custom link style */
+        .custom-link {
+            color: var(--accent-color);
+            transition: color 0.3s ease;
+        }
+        .custom-link:hover {
+            color: var(--accent-hover-color);
+        }
+
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800">
+<body class="text-slate-800">
 
     <!-- Header & Navigation -->
-    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-slate-200">
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b" style="border-color: var(--border-color);">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-slate-900">[Your Name]</a>
+            <a href="#" class="text-xl font-bold" style="color: var(--text-color);">[Seu Nome]</a>
             <div class="hidden md:flex space-x-8">
-                <a href="#research" class="text-slate-600 hover:text-blue-500 transition-colors duration-300">Research</a>
-                <a href="#education" class="text-slate-600 hover:text-blue-500 transition-colors duration-300">Education</a>
-                <a href="#activities" class="text-slate-600 hover:text-blue-500 transition-colors duration-300">Activities</a>
+                <a href="#research" class="hover:text-red-400 transition-colors duration-300" style="color:var(--text-color); --tw-hover-text-opacity: 1; color: rgba(58, 58, 58, var(--tw-hover-text-opacity));">Pesquisa</a>
+                <a href="#education" class="hover:text-red-400 transition-colors duration-300" style="color:var(--text-color); --tw-hover-text-opacity: 1; color: rgba(58, 58, 58, var(--tw-hover-text-opacity));">Educação</a>
+                <a href="#activities" class="hover:text-red-400 transition-colors duration-300" style="color:var(--text-color); --tw-hover-text-opacity: 1; color: rgba(58, 58, 58, var(--tw-hover-text-opacity));">Atividades</a>
             </div>
-            <button id="mobile-menu-button" class="md:hidden text-slate-800">
+            <button id="mobile-menu-button" class="md:hidden" style="color: var(--text-color);">
                 <i class="fas fa-bars fa-lg"></i>
             </button>
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-             <a href="#research" class="block py-2 text-slate-600 hover:text-blue-500">Research</a>
-             <a href="#education" class="block py-2 text-slate-600 hover:text-blue-500">Education</a>
-             <a href="#activities" class="block py-2 text-slate-600 hover:text-blue-500">Activities</a>
+             <a href="#research" class="block py-2">Pesquisa</a>
+             <a href="#education" class="block py-2">Educação</a>
+             <a href="#activities" class="block py-2">Atividades</a>
         </div>
     </header>
 
@@ -94,25 +123,25 @@
 
         <!-- Hero Section -->
         <section class="text-center min-h-[60vh] flex flex-col justify-center items-center">
-            <img src="https://placehold.co/128x128/E2E8F0/475569?text=You" alt="Your profile picture" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white shadow-lg">
-            <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 leading-tight">
-                Hello, I'm [Your Name]
+            <img src="https://placehold.co/128x128/fdfcf9/d96666?text=Você" alt="Your profile picture" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 shadow-lg" style="border-color: var(--bg-color);">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight" style="color: var(--text-color);">
+                Olá, eu sou [Seu Nome]
             </h1>
-            <p class="mt-4 text-lg md:text-xl text-slate-600 max-w-2xl mx-auto">
-                I'm a [Your Title, e.g., PhD Candidate in Computer Science] passionate about [Your Field of Interest]. Welcome to my personal space on the web.
+            <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto" style="color: #5a5a5a;">
+                Eu sou [Seu Título, ex: Candidato a Doutor em Ciência da Computação] apaixonado por [Seu Campo de Interesse]. Bem-vindo ao meu espaço pessoal na web.
             </p>
             <div class="mt-8 flex justify-center space-x-6">
                 <!-- Replace with your actual links -->
-                <a href="#" aria-label="Email" class="text-slate-500 hover:text-blue-500 transition-colors duration-300">
+                <a href="#" aria-label="Email" class="custom-link">
                     <i class="fas fa-envelope fa-2x"></i>
                 </a>
-                <a href="#" aria-label="LinkedIn" class="text-slate-500 hover:text-blue-500 transition-colors duration-300">
+                <a href="#" aria-label="LinkedIn" class="custom-link">
                     <i class="fab fa-linkedin fa-2x"></i>
                 </a>
-                <a href="#" aria-label="GitHub" class="text-slate-500 hover:text-blue-500 transition-colors duration-300">
+                <a href="#" aria-label="GitHub" class="custom-link">
                     <i class="fab fa-github fa-2x"></i>
                 </a>
-                <a href="#" aria-label="Google Scholar" class="text-slate-500 hover:text-blue-500 transition-colors duration-300">
+                <a href="#" aria-label="Google Scholar" class="custom-link">
                     <i class="fas fa-graduation-cap fa-2x"></i>
                 </a>
             </div>
@@ -120,43 +149,41 @@
 
         <!-- Research Section -->
         <section id="research" class="py-20 fade-in-section">
-            <h2 class="text-3xl font-bold text-center text-slate-900 mb-12">Research</h2>
+            <h2 class="text-3xl font-bold text-center section-header">Pesquisa</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Research Item 1 -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="font-bold text-lg mb-2 text-slate-800">[Research Project or Paper Title 1]</h3>
-                    <p class="text-slate-600 text-sm mb-4">
-                        [Authors separated by commas]
+                <!-- Research Item -->
+                <div class="bg-white/50 p-6 rounded-lg border hover:shadow-lg transition-shadow duration-300" style="border-color: var(--border-color);">
+                    <h3 class="font-bold text-lg mb-2">[Título do Projeto ou Artigo 1]</h3>
+                    <p class="text-sm mb-4" style="color: #5a5a5a;">
+                        [Autores separados por vírgula]
                     </p>
-                    <p class="text-slate-600 mb-4">
-                        Published in <span class="font-semibold">[Conference/Journal Name, Year]</span>.
+                    <p class="mb-4" style="color: #5a5a5a;">
+                        Publicado em <span class="font-semibold" style="color: var(--text-color);">[Nome da Conferência/Revista, Ano]</span>.
                     </p>
-                    <a href="#" class="font-medium text-blue-600 hover:text-blue-800 transition-colors duration-300">Read Paper &rarr;</a>
+                    <a href="#" class="font-medium custom-link">Ler Artigo &rarr;</a>
                 </div>
 
-                <!-- Research Item 2 -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="font-bold text-lg mb-2 text-slate-800">[Research Project or Paper Title 2]</h3>
-                    <p class="text-slate-600 text-sm mb-4">
-                        [Authors separated by commas]
+                <!-- Add more research items following the same structure -->
+                <div class="bg-white/50 p-6 rounded-lg border hover:shadow-lg transition-shadow duration-300" style="border-color: var(--border-color);">
+                    <h3 class="font-bold text-lg mb-2">[Título do Projeto ou Artigo 2]</h3>
+                    <p class="text-sm mb-4" style="color: #5a5a5a;">
+                        [Autores separados por vírgula]
                     </p>
-                    <p class="text-slate-600 mb-4">
-                        Published in <span class="font-semibold">[Conference/Journal Name, Year]</span>.
+                    <p class="mb-4" style="color: #5a5a5a;">
+                        Publicado em <span class="font-semibold" style="color: var(--text-color);">[Nome da Conferência/Revista, Ano]</span>.
                     </p>
-                    <a href="#" class="font-medium text-blue-600 hover:text-blue-800 transition-colors duration-300">View Project &rarr;</a>
+                    <a href="#" class="font-medium custom-link">Ver Projeto &rarr;</a>
                 </div>
-
-                <!-- Research Item 3 (Add more as needed) -->
-                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="font-bold text-lg mb-2 text-slate-800">[Research Project or Paper Title 3]</h3>
-                    <p class="text-slate-600 text-sm mb-4">
-                        [Authors separated by commas]
+                 <div class="bg-white/50 p-6 rounded-lg border hover:shadow-lg transition-shadow duration-300" style="border-color: var(--border-color);">
+                    <h3 class="font-bold text-lg mb-2">[Título do Projeto ou Artigo 3]</h3>
+                    <p class="text-sm mb-4" style="color: #5a5a5a;">
+                        [Autores separados por vírgula]
                     </p>
-                    <p class="text-slate-600 mb-4">
-                        Published in <span class="font-semibold">[Conference/Journal Name, Year]</span>.
+                    <p class="mb-4" style="color: #5a5a5a;">
+                        Publicado em <span class="font-semibold" style="color: var(--text-color);">[Nome da Conferência/Revista, Ano]</span>.
                     </p>
-                    <a href="#" class="font-medium text-blue-600 hover:text-blue-800 transition-colors duration-300">Read Paper &rarr;</a>
+                    <a href="#" class="font-medium custom-link">Ler Artigo &rarr;</a>
                 </div>
 
             </div>
@@ -164,73 +191,59 @@
 
         <!-- Education Section -->
         <section id="education" class="py-20 fade-in-section">
-            <h2 class="text-3xl font-bold text-center text-slate-900 mb-12">Education</h2>
+            <h2 class="text-3xl font-bold text-center section-header">Educação</h2>
             <div class="max-w-2xl mx-auto">
                 
                 <!-- Education Item 1 -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <time class="mb-1 text-sm font-normal leading-none text-slate-500">[Start Year] - [End Year]</time>
-                    <h3 class="text-lg font-semibold text-slate-900">[Degree, e.g., Ph.D. in Computer Science]</h3>
-                    <p class="text-base font-normal text-slate-600">[University Name], [City, Country]</p>
+                    <time class="mb-1 text-sm font-normal leading-none" style="color: #7a7a7a;">[Ano Início] - [Ano Fim]</time>
+                    <h3 class="text-lg font-semibold">[Grau, ex: Doutorado em Ciência da Computação]</h3>
+                    <p class="text-base font-normal" style="color: #5a5a5a;">[Nome da Universidade], [Cidade, País]</p>
                 </div>
                 
-                <!-- Education Item 2 -->
+                <!-- Add more education items -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <time class="mb-1 text-sm font-normal leading-none text-slate-500">[Start Year] - [End Year]</time>
-                    <h3 class="text-lg font-semibold text-slate-900">[Degree, e.g., M.S. in Data Science]</h3>
-                    <p class="text-base font-normal text-slate-600">[University Name], [City, Country]</p>
+                    <time class="mb-1 text-sm font-normal leading-none" style="color: #7a7a7a;">[Ano Início] - [Ano Fim]</time>
+                    <h3 class="text-lg font-semibold">[Grau, ex: Mestrado em Ciência de Dados]</h3>
+                    <p class="text-base font-normal" style="color: #5a5a5a;">[Nome da Universidade], [Cidade, País]</p>
                 </div>
-                
-                <!-- Education Item 3 (Add more as needed) -->
-                <div class="timeline-item">
+                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <time class="mb-1 text-sm font-normal leading-none text-slate-500">[Start Year] - [End Year]</time>
-                    <h3 class="text-lg font-semibold text-slate-900">[Degree, e.g., B.S. in Electrical Engineering]</h3>
-                    <p class="text-base font-normal text-slate-600">[University Name], [City, Country]</p>
+                    <time class="mb-1 text-sm font-normal leading-none" style="color: #7a7a7a;">[Ano Início] - [Ano Fim]</time>
+                    <h3 class="text-lg font-semibold">[Grau, ex: Bacharelado em Engenharia Elétrica]</h3>
+                    <p class="text-base font-normal" style="color: #5a5a5a;">[Nome da Universidade], [Cidade, País]</p>
                 </div>
-
             </div>
         </section>
 
         <!-- Activities Section -->
         <section id="activities" class="py-20 fade-in-section">
-            <h2 class="text-3xl font-bold text-center text-slate-900 mb-12">Activities</h2>
+            <h2 class="text-3xl font-bold text-center section-header">Atividades</h2>
             <div class="max-w-4xl mx-auto space-y-8">
 
-                <!-- Activity Item 1 -->
-                <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center">
-                        <i class="fas fa-chalkboard-teacher"></i>
+                <!-- Activity Item -->
+                <div class="bg-white/50 p-6 rounded-lg border flex items-start space-x-6" style="border-color: var(--border-color);">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #fce8e8; color: var(--accent-color);">
+                        <i class="fas fa-chalkboard-teacher fa-lg"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold text-lg text-slate-800">[Activity Title, e.g., Teaching Assistant]</h3>
-                        <p class="text-slate-600">[Course Name], [Term, e.g., Fall 2023]</p>
-                        <p class="text-slate-600 text-sm mt-1">[Brief description of your responsibilities].</p>
-                    </div>
-                </div>
-
-                <!-- Activity Item 2 -->
-                <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center">
-                        <i class="fas fa-microphone-alt"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg text-slate-800">[Talk or Presentation Title]</h3>
-                        <p class="text-slate-600">Presented at [Event/Conference Name], [Date]</p>
-                        <p class="text-slate-600 text-sm mt-1">[Brief description of the talk].</p>
+                        <h3 class="font-bold text-lg">[Atividade, ex: Monitor de Disciplina]</h3>
+                        <p style="color: #5a5a5a;">[Nome da Disciplina], [Período, ex: Outono 2023]</p>
+                        <p class="text-sm mt-1" style="color: #5a5a5a;">[Breve descrição de suas responsabilidades].</p>
                     </div>
                 </div>
                 
-                <!-- Activity Item 3 -->
-                <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4">
-                    <div class="flex-shrink-0 w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center">
-                        <i class="fas fa-award"></i>
+                 <!-- Add more activity items -->
+                <div class="bg-white/50 p-6 rounded-lg border flex items-start space-x-6" style="border-color: var(--border-color);">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #fce8e8; color: var(--accent-color);">
+                        <i class="fas fa-microphone-alt fa-lg"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold text-lg text-slate-800">[Award or Honor]</h3>
-                        <p class="text-slate-600">Awarded by [Awarding Institution], [Year]</p>
+                        <h3 class="font-bold text-lg">[Título da Palestra ou Apresentação]</h3>
+                        <p style="color: #5a5a5a;">Apresentado em [Nome do Evento/Conferência], [Data]</p>
+                        <p class="text-sm mt-1" style="color: #5a5a5a;">[Breve descrição da palestra].</p>
                     </div>
                 </div>
 
@@ -240,10 +253,10 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-slate-800 text-slate-300">
+    <footer style="background-color: #3a3a3a; color: #d1d1d1;">
         <div class="container mx-auto px-6 py-8 text-center">
-            <p>&copy; <span id="year"></span> [Your Name]. All Rights Reserved.</p>
-            <p class="text-sm text-slate-400 mt-2">Designed with care.</p>
+            <p>&copy; <span id="year"></span> [Seu Nome]. Todos os Direitos Reservados.</p>
+            <p class="text-sm mt-2" style="color: #a1a1a1;">Design com inspiração japonesa.</p>
         </div>
     </footer>
 
@@ -268,27 +281,21 @@
 
         // Intersection Observer for fade-in animations
         const sections = document.querySelectorAll('.fade-in-section');
-
         const observerOptions = {
-            root: null, // relative to the viewport
+            root: null,
             rootMargin: '0px',
-            threshold: 0.1 // 10% of the item must be visible
+            threshold: 0.1
         };
-
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
-                    // Optional: unobserve after it has become visible
-                    // observer.unobserve(entry.target); 
                 }
             });
         }, observerOptions);
-
         sections.forEach(section => {
             observer.observe(section);
         });
-
     </script>
 </body>
 </html>
