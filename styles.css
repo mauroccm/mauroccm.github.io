@@ -49,7 +49,7 @@ body {
 
 h1, h2 {
     color: #004d40; /* Cor de destaque dos títulos */
-    margin-bottom: 20px; /* Ajuste conforme necessário */
+    margin-bottom: 30px; /* Ajuste conforme necessário */
 }
 
 p {
@@ -63,7 +63,7 @@ ul li {
 }
 
 a {
-    color: #00796b;
+    color: #a4442f;
     text-decoration: none;
 }
 
