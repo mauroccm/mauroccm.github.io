@@ -16,84 +16,8 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
-        /* Custom styles for Japanese Ink theme */
-        :root {
-            --bg-color: #fdfcf9; /* Off-white, like washi paper */
-            --text-color: #3a3a3a; /* Dark gray, like ink */
-            --accent-color: #d96666; /* Pastel Red */
-            --accent-hover-color: #c85555; /* Darker red for hover */
-            --border-color: #e0e0e0;
-        }
+    <link rel="stylesheet" href="style.css">
 
-        body {
-            font-family: 'Noto Sans JP', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-        }
-
-        /* Animation for elements fading in on scroll */
-        .fade-in-section {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .fade-in-section.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Brush stroke underline for section headers */
-        .section-header {
-            position: relative;
-            padding-bottom: 1rem;
-            margin-bottom: 3rem;
-        }
-        .section-header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 10px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10'%3E%3Cpath d='M0 5 Q 25 2, 50 5 T 100 5' stroke='%23d96666' fill='none' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-size: contain;
-        }
-
-        /* Timeline styles for Education section */
-        .timeline-item {
-            position: relative;
-            padding-left: 2.5rem; /* pl-10 */
-            padding-bottom: 2rem; /* pb-8 */
-            border-left: 1px solid var(--border-color);
-        }
-        .timeline-item:last-child {
-            padding-bottom: 0;
-        }
-        .timeline-dot {
-            position: absolute;
-            left: -0.5rem; /* Adjust to center on the line */
-            top: 0.25rem; /* top-1 */
-            width: 1rem; /* w-4 */
-            height: 1rem; /* h-4 */
-            border-radius: 9999px; /* rounded-full */
-            background-color: var(--bg-color);
-            border: 2px solid var(--accent-color);
-        }
-        
-        /* Custom link style */
-        .custom-link {
-            color: var(--accent-color);
-            transition: color 0.3s ease;
-        }
-        .custom-link:hover {
-            color: var(--accent-hover-color);
-        }
-
-    </style>
 </head>
 <body class="text-slate-800">
 
@@ -273,8 +197,8 @@
     <!-- Footer -->
     <footer style="background-color: #3a3a3a; color: #d1d1d1;">
         <div class="container mx-auto px-6 py-8 text-center">
-            <p>&copy; <span id="year"></span> Mauro Morais. All Rights Reserved.</p>
-            <p class="text-sm mt-2" style="color: #a1a1a1;">Design with Japanese inspiration.</p>
+            <p>&copy; <span id="year">2025</span> Mauro Morais. All Rights Reserved.</p>
+            <p class="text-sm mt-2" style="color: #a1a1a1;">Design with the help of LLM <span style="text-decoration: line-through;">fools</span> tools.</p>
         </div>
     </footer>
 
