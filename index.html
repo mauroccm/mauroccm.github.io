@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mauro Morais</title>
+    <title>Morais Lab</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Noto Serif JP -->
+    <!-- Google Fonts: Noto Sans JP -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -27,7 +27,7 @@
         }
 
         body {
-            font-family: 'Noto Serif JP', serif;
+            font-family: 'Noto Sans JP', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
         }
@@ -80,8 +80,8 @@
             width: 1rem; /* w-4 */
             height: 1rem; /* h-4 */
             border-radius: 9999px; /* rounded-full */
-            background-color: var(--bg-color); /* bg-white */
-            border: 2px solid var(--accent-color); /* border-red-pastel */
+            background-color: var(--bg-color);
+            border: 2px solid var(--accent-color);
         }
         
         /* Custom link style */
@@ -100,11 +100,11 @@
     <!-- Header & Navigation -->
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b" style="border-color: var(--border-color);">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold" style="color: var(--text-color);">[Seu Nome]</a>
+            <a href="#" class="text-xl font-bold" style="color: var(--text-color);">Morais Lab</a>
             <div class="hidden md:flex space-x-8">
-                <a href="#research" class="hover:text-red-400 transition-colors duration-300" style="color:var(--text-color); --tw-hover-text-opacity: 1; color: rgba(58, 58, 58, var(--tw-hover-text-opacity));">Pesquisa</a>
-                <a href="#education" class="hover:text-red-400 transition-colors duration-300" style="color:var(--text-color); --tw-hover-text-opacity: 1; color: rgba(58, 58, 58, var(--tw-hover-text-opacity));">Educação</a>
-                <a href="#activities" class="hover:text-red-400 transition-colors duration-300" style="color:var(--text-color); --tw-hover-text-opacity: 1; color: rgba(58, 58, 58, var(--tw-hover-text-opacity));">Atividades</a>
+                <a href="#research" class="hover:text-red-400 transition-colors duration-300" style="color:var(--text-color); --tw-hover-text-opacity: 1; color: rgba(58, 58, 58, var(--tw-hover-text-opacity));">Research</a>
+                <a href="#education" class="hover:text-red-400 transition-colors duration-300" style="color:var(--text-color); --tw-hover-text-opacity: 1; color: rgba(58, 58, 58, var(--tw-hover-text-opacity));">Education</a>
+                <a href="#activities" class="hover:text-red-400 transition-colors duration-300" style="color:var(--text-color); --tw-hover-text-opacity: 1; color: rgba(58, 58, 58, var(--tw-hover-text-opacity));">Activities</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden" style="color: var(--text-color);">
                 <i class="fas fa-bars fa-lg"></i>
@@ -112,9 +112,9 @@
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-             <a href="#research" class="block py-2">Pesquisa</a>
-             <a href="#education" class="block py-2">Educação</a>
-             <a href="#activities" class="block py-2">Atividades</a>
+             <a href="#research" class="block py-2">Research</a>
+             <a href="#education" class="block py-2">Education</a>
+             <a href="#activities" class="block py-2">Activities</a>
         </div>
     </header>
 
@@ -123,67 +123,75 @@
 
         <!-- Hero Section -->
         <section class="text-center min-h-[60vh] flex flex-col justify-center items-center">
-            <img src="https://placehold.co/128x128/fdfcf9/d96666?text=Você" alt="Your profile picture" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 shadow-lg" style="border-color: var(--bg-color);">
+            <img src="https://placehold.co/128x128/fdfcf9/d96666?text=Logo" alt="Profile picture" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 shadow-lg" style="border-color: var(--bg-color);">
             <h1 class="text-4xl md:text-6xl font-bold leading-tight" style="color: var(--text-color);">
-                Olá, eu sou [Seu Nome]
+                Fostering Health Through (Data) Science
             </h1>
             <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto" style="color: #5a5a5a;">
-                Eu sou [Seu Título, ex: Candidato a Doutor em Ciência da Computação] apaixonado por [Seu Campo de Interesse]. Bem-vindo ao meu espaço pessoal na web.
+                Data Science 🖥️ for Climate & Health 🌦️ and Computational Systems Biology 🧬
             </p>
             <div class="mt-8 flex justify-center space-x-6">
                 <!-- Replace with your actual links -->
-                <a href="#" aria-label="Email" class="custom-link">
+                <a href="mailto:mauro_morais@pasteur-sp-org.br" aria-label="Email" class="custom-link">
                     <i class="fas fa-envelope fa-2x"></i>
                 </a>
-                <a href="#" aria-label="LinkedIn" class="custom-link">
+                <a href="https://www.linkedin.com/in/mauro-cafund%C3%B3-de-morais/" aria-label="LinkedIn" class="custom-link">
                     <i class="fab fa-linkedin fa-2x"></i>
                 </a>
-                <a href="#" aria-label="GitHub" class="custom-link">
+                <a href="https://github.com/mauroccm" aria-label="GitHub" class="custom-link">
                     <i class="fab fa-github fa-2x"></i>
                 </a>
-                <a href="#" aria-label="Google Scholar" class="custom-link">
+                <a href="https://scholar.google.com/citations?user=qs6DKacAAAAJ&hl=pt-BR" aria-label="Google Scholar" class="custom-link">
                     <i class="fas fa-graduation-cap fa-2x"></i>
+                </a>
+                <a href="https://orcid.org/0000-0003-4248-750X" aria-label="ORCID" class="custom-link">
+                    <i class="fab fa-orcid fa-2x"></i>
                 </a>
             </div>
         </section>
 
         <!-- Research Section -->
         <section id="research" class="py-20 fade-in-section">
-            <h2 class="text-3xl font-bold text-center section-header">Pesquisa</h2>
+            <h2 class="text-3xl font-bold text-center section-header">Research</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
                 <!-- Research Item -->
                 <div class="bg-white/50 p-6 rounded-lg border hover:shadow-lg transition-shadow duration-300" style="border-color: var(--border-color);">
-                    <h3 class="font-bold text-lg mb-2">[Título do Projeto ou Artigo 1]</h3>
-                    <p class="text-sm mb-4" style="color: #5a5a5a;">
-                        [Autores separados por vírgula]
-                    </p>
+                    <h3 class="font-bold text-lg mb-2">Mapping Environmental Barriers to Arbovirus Outbreaks in Brazil</h3>                    
                     <p class="mb-4" style="color: #5a5a5a;">
-                        Publicado em <span class="font-semibold" style="color: var(--text-color);">[Nome da Conferência/Revista, Ano]</span>.
+                        How <span class="font-semibold" style="color: var(--text-color);">climate variables</span> affect the distribution of <span class="font-semibold" style="color: var(--text-color);">mosquito-borne viruses</span>?
                     </p>
-                    <a href="#" class="font-medium custom-link">Ler Artigo &rarr;</a>
+                    <p class="text-sm mb-4" style="color: #5a5a5a;">
+                        Climate and Health Accelerator Program | Institut Pasteur de São Paulo (IPSP) | Pasteur Network
+                    </p>
+                    <!-- TODO: Create page for C&H project -->
+                    <a href="#" class="font-medium custom-link">Read More &rarr;</a>
                 </div>
 
                 <!-- Add more research items following the same structure -->
                 <div class="bg-white/50 p-6 rounded-lg border hover:shadow-lg transition-shadow duration-300" style="border-color: var(--border-color);">
-                    <h3 class="font-bold text-lg mb-2">[Título do Projeto ou Artigo 2]</h3>
-                    <p class="text-sm mb-4" style="color: #5a5a5a;">
-                        [Autores separados por vírgula]
-                    </p>
+                    <h3 class="font-bold text-lg mb-2">Parasite Detection on Microscopy Images</h3>
                     <p class="mb-4" style="color: #5a5a5a;">
-                        Publicado em <span class="font-semibold" style="color: var(--text-color);">[Nome da Conferência/Revista, Ano]</span>.
+                        Detect parasites in <span class="font-semibold" style="color: var(--text-color);">microscopy images</span> using <span class="font-semibold" style="color: var(--text-color);">Artificial Intelligence models</span>.
                     </p>
-                    <a href="#" class="font-medium custom-link">Ver Projeto &rarr;</a>
+                    <p class="text-sm mb-4" style="color: #5a5a5a;">
+                        Computational Systems Biology Lab (CSBL) | School of Pharmaceutical Sciences, University of São Paulo (FCF-USP)
+                    </p>                    
+                    <!-- TODO: Create page for parasite detection -->
+                    <a href="https://peerj.com/articles/13470" class="font-medium custom-link">View Paper &rarr;</a>
                 </div>
-                 <div class="bg-white/50 p-6 rounded-lg border hover:shadow-lg transition-shadow duration-300" style="border-color: var(--border-color);">
-                    <h3 class="font-bold text-lg mb-2">[Título do Projeto ou Artigo 3]</h3>
-                    <p class="text-sm mb-4" style="color: #5a5a5a;">
-                        [Autores separados por vírgula]
-                    </p>
+
+                <!-- Add more research items following the same structure -->
+                <div class="bg-white/50 p-6 rounded-lg border hover:shadow-lg transition-shadow duration-300" style="border-color: var(--border-color);">
+                    <h3 class="font-bold text-lg mb-2">ArchipelaGO: a Spatial Transcriptomics Enrichment Analysis Tool</h3>
                     <p class="mb-4" style="color: #5a5a5a;">
-                        Publicado em <span class="font-semibold" style="color: var(--text-color);">[Nome da Conferência/Revista, Ano]</span>.
+                        Building a <span class="font-semibold" style="color: var(--text-color);">machine learning model</span> to analyse <span class="font-semibold" style="color: var(--text-color);">spatial transcriptomics</span> data.
                     </p>
-                    <a href="#" class="font-medium custom-link">Ler Artigo &rarr;</a>
+                    <p class="text-sm mb-4" style="color: #5a5a5a;">
+                        Computational Systems Biology Lab (CSBL) | School of Pharmaceutical Sciences, University of São Paulo (FCF-USP)
+                    </p>
+                    <!-- TODO: Create page for ArchipelaGO -->
+                    <a href="#" class="font-medium custom-link">Read More &rarr;</a>
                 </div>
 
             </div>
@@ -191,36 +199,45 @@
 
         <!-- Education Section -->
         <section id="education" class="py-20 fade-in-section">
-            <h2 class="text-3xl font-bold text-center section-header">Educação</h2>
+            <h2 class="text-3xl font-bold text-center section-header">Education</h2>
             <div class="max-w-2xl mx-auto">
-                
-                <!-- Education Item 1 -->
+
+                <!-- Add more education items -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <time class="mb-1 text-sm font-normal leading-none" style="color: #7a7a7a;">[Ano Início] - [Ano Fim]</time>
-                    <h3 class="text-lg font-semibold">[Grau, ex: Doutorado em Ciência da Computação]</h3>
-                    <p class="text-base font-normal" style="color: #5a5a5a;">[Nome da Universidade], [Cidade, País]</p>
+                    <time class="mb-1 text-sm font-normal leading-none" style="color: #7a7a7a;"> 2020 - 2024</time>
+                    <h3 class="text-lg font-semibold">Postdoctoral in Computational Systems Biology</h3>
+                    <p class="text-base font-normal" style="color: #5a5a5a;">USP, São Paulo, SP, Brazil</p>
                 </div>
                 
                 <!-- Add more education items -->
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <time class="mb-1 text-sm font-normal leading-none" style="color: #7a7a7a;">[Ano Início] - [Ano Fim]</time>
-                    <h3 class="text-lg font-semibold">[Grau, ex: Mestrado em Ciência de Dados]</h3>
-                    <p class="text-base font-normal" style="color: #5a5a5a;">[Nome da Universidade], [Cidade, País]</p>
+                    <time class="mb-1 text-sm font-normal leading-none" style="color: #7a7a7a;"> 2015 - 2019</time>
+                    <h3 class="text-lg font-semibold">Postdoctoral in Mathematical Biology</h3>
+                    <p class="text-base font-normal" style="color: #5a5a5a;">USP, São Paulo, SP, Brazil</p>
                 </div>
+
+                <!-- Education Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <time class="mb-1 text-sm font-normal leading-none" style="color: #7a7a7a;">2008 - 2012</time>
+                    <h3 class="text-lg font-semibold">Ph.D. in Biotechnology Applied to Pharmaceutical Sciences</h3>
+                    <p class="text-base font-normal" style="color: #5a5a5a;">UNESP, Araraquara, SP, Brazil</p>
+                </div>                
+                
                  <div class="timeline-item">
                     <div class="timeline-dot"></div>
-                    <time class="mb-1 text-sm font-normal leading-none" style="color: #7a7a7a;">[Ano Início] - [Ano Fim]</time>
-                    <h3 class="text-lg font-semibold">[Grau, ex: Bacharelado em Engenharia Elétrica]</h3>
-                    <p class="text-base font-normal" style="color: #5a5a5a;">[Nome da Universidade], [Cidade, País]</p>
+                    <time class="mb-1 text-sm font-normal leading-none" style="color: #7a7a7a;">2003 - 2007</time>
+                    <h3 class="text-lg font-semibold">B.S. in Pharmaceutical Sciences</h3>
+                    <p class="text-base font-normal" style="color: #5a5a5a;">UNESP, Araraquara, SP, Brazil</p>
                 </div>
             </div>
         </section>
 
         <!-- Activities Section -->
         <section id="activities" class="py-20 fade-in-section">
-            <h2 class="text-3xl font-bold text-center section-header">Atividades</h2>
+            <h2 class="text-3xl font-bold text-center section-header">Activities</h2>
             <div class="max-w-4xl mx-auto space-y-8">
 
                 <!-- Activity Item -->
@@ -229,9 +246,9 @@
                         <i class="fas fa-chalkboard-teacher fa-lg"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold text-lg">[Atividade, ex: Monitor de Disciplina]</h3>
-                        <p style="color: #5a5a5a;">[Nome da Disciplina], [Período, ex: Outono 2023]</p>
-                        <p class="text-sm mt-1" style="color: #5a5a5a;">[Breve descrição de suas responsabilidades].</p>
+                        <h3 class="font-bold text-lg">Teaching Assistant</h3>
+                        <p style="color: #5a5a5a;">Introduction to Bioinformatics</p>
+                        <p class="text-sm mt-1" style="color: #5a5a5a;">Teaching data science languages (R and Python) for non-computational scientists.</p>
                     </div>
                 </div>
                 
@@ -241,9 +258,10 @@
                         <i class="fas fa-microphone-alt fa-lg"></i>
                     </div>
                     <div>
-                        <h3 class="font-bold text-lg">[Título da Palestra ou Apresentação]</h3>
-                        <p style="color: #5a5a5a;">Apresentado em [Nome do Evento/Conferência], [Data]</p>
-                        <p class="text-sm mt-1" style="color: #5a5a5a;">[Breve descrição da palestra].</p>
+                        <h3 class="font-bold text-lg">Mapping Environmental Barriers to Arbovirus Spillover in Brazil Using AI and Spatial Modeling
+</h3>
+                        <p style="color: #5a5a5a;">Presented at Pasteur Network Climate & Health Accelerator Fellowship convening, May, 2025</p>
+                        <p class="text-sm mt-1" style="color: #5a5a5a;">Using machine learning modeling approach to identify environmental barriers of mosquito borne outbreaks in Brazil.</p>
                     </div>
                 </div>
 
@@ -255,8 +273,8 @@
     <!-- Footer -->
     <footer style="background-color: #3a3a3a; color: #d1d1d1;">
         <div class="container mx-auto px-6 py-8 text-center">
-            <p>&copy; <span id="year"></span> [Seu Nome]. Todos os Direitos Reservados.</p>
-            <p class="text-sm mt-2" style="color: #a1a1a1;">Design com inspiração japonesa.</p>
+            <p>&copy; <span id="year"></span> Mauro Morais. All Rights Reserved.</p>
+            <p class="text-sm mt-2" style="color: #a1a1a1;">Design with Japanese inspiration.</p>
         </div>
     </footer>
 
