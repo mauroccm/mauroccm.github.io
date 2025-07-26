@@ -7,6 +7,6 @@
 - 🌱 I’m currently learning about dashboards and interactive data tools.
 - 👯 I’m looking for collaboration on metagenomics of viruses from humans and environment samples and spatial-temporal statistical analysis.
 - 💬 Ask me about Machine Learning and Bioimage analysis ideas.
-- 📫 Get in touch: [mauro_morais@usp.br](mailto:mauro_morais@usp.br) or [mauroccm@gmail.com](mailto:mauroccm@gmail.com)
+- 📫 Get in touch: [mauro_morais@usp.br](mailto:mauro_morais@usp.br) or [mauro_morais@pasteur-sp.org.br](mailto:mauro_morais@pasteur-sp.org.br)
 - 📰 Other news: [instagram.com/mauroccm](instagram.com/mauroccm)
 - ⚡ Fun fact: "The only victory that lasts is the one won over one's own ignorance." Kano Jigoro

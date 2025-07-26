@@ -24,11 +24,11 @@
     <!-- Header & Navigation -->
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b" style="border-color: var(--border-color);">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold" style="color: var(--text-color);">Morais Lab</a>
+            <a href="#" class="text-xl font-bold" style="color: var(--text-color);">Mauro Morais</a>
             <div class="hidden md:flex space-x-8">
                 <a href="#research" class="hover:text-red-400 transition-colors duration-300" style="color:var(--text-color); --tw-hover-text-opacity: 1; color: rgba(58, 58, 58, var(--tw-hover-text-opacity));">Research</a>
-                <a href="#education" class="hover:text-red-400 transition-colors duration-300" style="color:var(--text-color); --tw-hover-text-opacity: 1; color: rgba(58, 58, 58, var(--tw-hover-text-opacity));">Education</a>
                 <a href="#activities" class="hover:text-red-400 transition-colors duration-300" style="color:var(--text-color); --tw-hover-text-opacity: 1; color: rgba(58, 58, 58, var(--tw-hover-text-opacity));">Activities</a>
+                <a href="#education" class="hover:text-red-400 transition-colors duration-300" style="color:var(--text-color); --tw-hover-text-opacity: 1; color: rgba(58, 58, 58, var(--tw-hover-text-opacity));">Education</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden" style="color: var(--text-color);">
                 <i class="fas fa-bars fa-lg"></i>
@@ -36,9 +36,9 @@
         </nav>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
-             <a href="#research" class="block py-2">Research</a>
-             <a href="#education" class="block py-2">Education</a>
+             <a href="#research" class="block py-2">Research</a>             
              <a href="#activities" class="block py-2">Activities</a>
+             <a href="#education" class="block py-2">Education</a>
         </div>
     </header>
 
@@ -47,31 +47,18 @@
 
         <!-- Hero Section -->
         <section class="text-center min-h-[60vh] flex flex-col justify-center items-center">
-            <img src="https://placehold.co/128x128/fdfcf9/d96666?text=Logo" alt="Profile picture" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 shadow-lg" style="border-color: var(--bg-color);">
-            <h1 class="text-4xl md:text-6xl font-bold leading-tight" style="color: var(--text-color);">
-                Fostering Health Through (Data) Science
-            </h1>
-            <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto" style="color: #5a5a5a;">
-                Data Science 🖥️ for Climate & Health 🌦️ and Computational Systems Biology 🧬
-            </p>
-            <div class="mt-8 flex justify-center space-x-6">
-                <!-- Replace with your actual links -->
-                <a href="mailto:mauro_morais@pasteur-sp-org.br" aria-label="Email" class="custom-link">
-                    <i class="fas fa-envelope fa-2x"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/mauro-cafund%C3%B3-de-morais/" aria-label="LinkedIn" class="custom-link">
-                    <i class="fab fa-linkedin fa-2x"></i>
-                </a>
-                <a href="https://github.com/mauroccm" aria-label="GitHub" class="custom-link">
-                    <i class="fab fa-github fa-2x"></i>
-                </a>
-                <a href="https://scholar.google.com/citations?user=qs6DKacAAAAJ&hl=pt-BR" aria-label="Google Scholar" class="custom-link">
-                    <i class="fas fa-graduation-cap fa-2x"></i>
-                </a>
-                <a href="https://orcid.org/0000-0003-4248-750X" aria-label="ORCID" class="custom-link">
-                    <i class="fab fa-orcid fa-2x"></i>
-                </a>
+            <div class="flex flex-col md:flex-row items-center justify-center w-full mb-6">
+                <img src="https://placehold.co/128x128/fdfcf9/d96666?text=Logo" alt="Logo image" class="w-32 h-32 rounded-full border-4 shadow-lg mb-4 md:mb-0 md:mr-8" style="border-color: var(--bg-color);">
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight" style="color: var(--text-color);">
+                        Fostering Health Through (Data) Science
+                    </h1>
+                    <p class="mt-4 text-lg md:text-xl max-w-2xl mx-auto" style="color: #5a5a5a;">
+                        Data Science 🖥️ for Climate & Health 🌦️ and Computational Systems Biology 🧬
+                    </p>
+                </div>
             </div>
+            
         </section>
 
         <!-- Research Section -->
@@ -89,7 +76,7 @@
                         Climate and Health Accelerator Program | Institut Pasteur de São Paulo (IPSP) | Pasteur Network
                     </p>
                     <!-- TODO: Create page for C&H project -->
-                    <a href="#" class="font-medium custom-link">Read More &rarr;</a>
+                    <a href="https://pasteur-network.org/what-we-do/projects/climate-and-health-observatory-accelerator-project/" class="font-medium custom-link">Read More &rarr;</a>
                 </div>
 
                 <!-- Add more research items following the same structure -->
@@ -116,6 +103,39 @@
                     </p>
                     <!-- TODO: Create page for ArchipelaGO -->
                     <a href="#" class="font-medium custom-link">Read More &rarr;</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Activities Section -->
+        <section id="activities" class="py-20 fade-in-section">
+            <h2 class="text-3xl font-bold text-center section-header">Activities</h2>
+            <div class="max-w-4xl mx-auto space-y-8">
+
+                <!-- Activity Item -->
+                <div class="bg-white/50 p-6 rounded-lg border flex items-start space-x-6" style="border-color: var(--border-color);">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #fce8e8; color: var(--accent-color);">
+                        <i class="fas fa-chalkboard-teacher fa-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg">Teaching Assistant</h3>
+                        <p style="color: #5a5a5a;">Introduction to Bioinformatics</p>
+                        <p class="text-sm mt-1" style="color: #5a5a5a;">Teaching data science languages (R and Python) for non-computational scientists.</p>
+                    </div>
+                </div>
+                
+                 <!-- Add more activity items -->
+                <div class="bg-white/50 p-6 rounded-lg border flex items-start space-x-6" style="border-color: var(--border-color);">
+                    <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #fce8e8; color: var(--accent-color);">
+                        <i class="fas fa-microphone-alt fa-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg">Mapping Environmental Barriers to Arbovirus Spillover in Brazil Using AI and Spatial Modeling
+</h3>
+                        <p style="color: #5a5a5a;">Presented at Pasteur Network Climate & Health Accelerator Fellowship convening, Hong Kong, May, 2025</p>
+                        <p class="text-sm mt-1" style="color: #5a5a5a;">Using machine learning modeling approach to identify environmental barriers of mosquito borne outbreaks in Brazil.</p>
+                    </div>
                 </div>
 
             </div>
@@ -159,47 +179,35 @@
             </div>
         </section>
 
-        <!-- Activities Section -->
-        <section id="activities" class="py-20 fade-in-section">
-            <h2 class="text-3xl font-bold text-center section-header">Activities</h2>
-            <div class="max-w-4xl mx-auto space-y-8">
-
-                <!-- Activity Item -->
-                <div class="bg-white/50 p-6 rounded-lg border flex items-start space-x-6" style="border-color: var(--border-color);">
-                    <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #fce8e8; color: var(--accent-color);">
-                        <i class="fas fa-chalkboard-teacher fa-lg"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg">Teaching Assistant</h3>
-                        <p style="color: #5a5a5a;">Introduction to Bioinformatics</p>
-                        <p class="text-sm mt-1" style="color: #5a5a5a;">Teaching data science languages (R and Python) for non-computational scientists.</p>
-                    </div>
-                </div>
-                
-                 <!-- Add more activity items -->
-                <div class="bg-white/50 p-6 rounded-lg border flex items-start space-x-6" style="border-color: var(--border-color);">
-                    <div class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center" style="background-color: #fce8e8; color: var(--accent-color);">
-                        <i class="fas fa-microphone-alt fa-lg"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-bold text-lg">Mapping Environmental Barriers to Arbovirus Spillover in Brazil Using AI and Spatial Modeling
-</h3>
-                        <p style="color: #5a5a5a;">Presented at Pasteur Network Climate & Health Accelerator Fellowship convening, May, 2025</p>
-                        <p class="text-sm mt-1" style="color: #5a5a5a;">Using machine learning modeling approach to identify environmental barriers of mosquito borne outbreaks in Brazil.</p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
     </main>
 
     <!-- Footer -->
     <footer style="background-color: #3a3a3a; color: #d1d1d1;">
-        <div class="container mx-auto px-6 py-8 text-center">
+        <!---<p class="text-center text-lg font-semibold py-4" style="color: var(--bg-color);">Connect with Me</p>--->
+        <div class="mt-4 flex justify-center space-x-6 py-6">
+            <!-- Replace with your actual links -->
+            <a href="mailto:mauro_morais@pasteur-sp-org.br" aria-label="Email" class="custom-link">
+                <i class="fas fa-envelope fa-2x"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/mauro-cafund%C3%B3-de-morais/" aria-label="LinkedIn" class="custom-link">
+                <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            <a href="https://github.com/mauroccm" aria-label="GitHub" class="custom-link">
+                <i class="fab fa-github fa-2x"></i>
+            </a>
+            <a href="https://scholar.google.com/citations?user=qs6DKacAAAAJ&hl=pt-BR" aria-label="Google Scholar" class="custom-link">
+                <i class="fas fa-graduation-cap fa-2x"></i>
+            </a>
+            <a href="https://orcid.org/0000-0003-4248-750X" aria-label="ORCID" class="custom-link">
+                <i class="fab fa-orcid fa-2x"></i>
+            </a>
+        </div>
+
+        <div class="container mx-auto px-6 py-6 text-center">
             <p>&copy; <span id="year">2025</span> Mauro Morais. All Rights Reserved.</p>
             <p class="text-sm mt-2" style="color: #a1a1a1;">Design with the help of LLM <span style="text-decoration: line-through;">fools</span> tools.</p>
         </div>
+
     </footer>
 
     <script>
