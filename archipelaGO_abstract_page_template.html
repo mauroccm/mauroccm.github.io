@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArchipelaGO: Uncovering Tissue Geography</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Define custom pastel colors inspired by the infographic */
+        :root {
+            --bg-color: #f4f9f8;      /* Very light pastel green-blue */
+            --card-bg: #ffffff;
+            --primary-color: #2a9d8f;  /* Muted teal from graphic */
+            --secondary-color: #5bafc9; /* Muted blue from graphic */
+            --placeholder-bg: #e6f1f5;
+            --text-color: #374151;     /* gray-700 */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+        }
+
+        /* Mobile-first: default to a single-column stack */
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            width: 100%;
+            padding: 1rem;
+        }
+
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: var(--card-bg);
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+        }
+
+        /* Style for the image placeholder */
+        .placeholder {
+            background-color: var(--placeholder-bg);
+            border: 2px dashed var(--secondary-color);
+            opacity: 0.7;
+            border-radius: 0.5rem; /* rounded-lg */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #555;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+
+        /* Main card title color */
+        .card h2 {
+            color: var(--primary-color);
+        }
+
+        /* Special styling for the center card */
+        .card-center {
+            border: 2px solid var(--secondary-color);
+        }
+        
+        .card-center h2 {
+            color: var(--secondary-color);
+        }
+
+        /* Desktop layout: Use 3x3 grid for 4 corners + center */
+        @media (min-width: 1024px) {
+            .card-container {
+                display: grid;
+                /* Define a 3x3 grid */
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                gap: 2rem;
+                width: 90vw;
+                height: 85vh; /* Set a fixed height for the viewport */
+                max-width: 1400px;
+                padding: 0;
+            }
+
+            .card {
+                height: 100%; /* Make cards fill their grid cell */
+                display: flex;
+                flex-direction: column;
+            }
+
+            /* Assign cards to grid areas */
+            .card-tl { grid-area: 1 / 1 / 2 / 2; } /* Row 1, Col 1 */
+            .card-tr { grid-area: 1 / 3 / 2 / 4; } /* Row 1, Col 3 */
+            .card-bl { grid-area: 3 / 1 / 4 / 2; } /* Row 3, Col 1 */
+            .card-br { grid-area: 3 / 3 / 4 / 4; } /* Row 3, Col 3 */
+            
+            .card-center {
+                grid-area: 2 / 2 / 3 / 3; /* Row 2, Col 2 */
+                transform: scale(1.05); /* Make center card slightly larger */
+                z-index: 10;
+            }
+
+            /* Enhance desktop hover effect */
+            .card:hover {
+                transform: scale(1.08);
+                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* shadow-2xl */
+                z-index: 20;
+            }
+
+            .card-center:hover {
+                transform: scale(1.12); /* Even more zoom for center */
+            }
+        }
+    </style>
+</head>
+<body class="text-[var(--text-color)] flex flex-col items-center justify-center min-h-screen p-4 antialiased">
+
+    <!-- Page Title -->
+    <header class="text-center mb-8 lg:mb-12">
+        <h1 class="text-4xl lg:text-5xl font-bold" style="color: var(--primary-color);">
+            ArchipelaGO
+        </h1>
+        <p class="text-xl lg:text-2xl font-light text-gray-600 mt-2">
+            Uncovering the Functional Geography of Tissues
+        </p>
+    </header>
+
+    <!-- Main content grid -->
+    <main class="card-container">
+
+        <!-- Card 1: Top-Left -->
+        <article class="card card-tl p-6">
+            <h2 class="text-xl font-semibold mb-3">Flexible workflow</h2>
+            <p class="text-gray-600 text-sm mb-4 flex-grow">
+                ArchipelaGO can be used as both a comprehensive R package and a standalone tool, providing flexibility for different user needs and computational environments.
+            </p>
+            <div class="placeholder w-full h-24">Image Placeholder</div>
+        </article>
+
+        <!-- Card 2: Top-Right -->
+        <article class="card card-tr p-6">
+            <h2 class="text-xl font-semibold mb-3">Spatial expression data compatibility</h2>
+            <p class="text-gray-600 text-sm mb-4 flex-grow">
+                Compatible with diverse spatial transcriptomics platforms, including both image-based (CosMx, Xenium) and array-based (Visium, Stereo-seq) data formats.
+            </p>
+            <div class="placeholder w-full h-24">Image Placeholder</div>
+        </article>
+
+        <!-- Card 3: Bottom-Left -->
+        <article class="card card-bl p-6">
+            <h2 class="text-xl font-semibold mb-3">Key advantages</h2>
+            <p class="text-gray-600 text-sm mb-4 flex-grow">
+                Provides robust, cross-platform results that resolve spatial heterogeneity and deliver biologically interpretable insights into tissue structure.
+            </p>
+            <div class="placeholder w-full h-24">Image Placeholder</div>
+        </article>
+
+        <!-- Card 4: Bottom-Right -->
+        <article class="card card-br p-6">
+            <h2 class="text-xl font-semibold mb-3">Integrated analysis</h2>
+            <p class="text-gray-600 text-sm mb-4 flex-grow">
+                Performs integrated analysis of cell composition, distance metrics, and interaction patterns to profile the complex tissue microenvironment.
+            </p>
+            <div class="placeholder w-full h-24">Image Placeholder</div>
+        </article>
+
+        <!-- Card 5: Center -->
+        <article class="card card-center p-8 flex flex-col justify-center items-center text-center">
+            <h2 class="text-2xl lg:text-3xl font-bold mb-4">Functional Islands</h2>
+            <p class="text-gray-700 text-base mb-6 flex-grow">
+                The core concept: identifying "Functional Islands" based on spatial gene set entanglement, revealing distinct functional neighborhoods within the tissue.
+            </p>
+            <div class="placeholder w-full h-32">Image Placeholder</div>
+        </article>
+
+    </main>
+
+</body>
+</html>
