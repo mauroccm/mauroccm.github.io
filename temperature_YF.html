@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature & Yellow Fever Transmission</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #073B4C;
+        }
+        .text-accent-blue { color: #118AB2; }
+        .text-accent-green { color: #06D6A0; }
+        .text-accent-yellow { color: #FFD166; }
+        .text-accent-red { color: #FF6B6B; }
+        .bg-accent-blue { background-color: #118AB2; }
+        .bg-accent-green { background-color: #06D6A0; }
+        .bg-accent-yellow { background-color: #FFD166; }
+        .bg-accent-red { background-color: #FF6B6B; }
+        .border-accent-blue { border-color: #118AB2; }
+        .border-accent-green { border-color: #06D6A0; }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <main class="max-w-7xl mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-bold mb-2" style="color: #073B4C;">The Thermal Bottleneck</h1>
+            <p class="text-xl md:text-2xl" style="color: #118AB2;">Analyzing the Critical Impact of Temperature on Yellow Fever Virus Transmission</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <div class="md:col-span-2 bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-center mb-4">What is the Extrinsic Incubation Period (EIP)?</h2>
+                <p class="text-center text-gray-700 mb-6">The EIP is the crucial time it takes for a mosquito to become infectious after biting an infected host. During this period, the virus must replicate, disseminate from the midgut, and finally reach the salivary glands. This process is highly sensitive to temperature.</p>
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="flex-shrink-0 text-center p-4 bg-gray-50 rounded-lg">
+                        <span class="text-4xl">🦟</span>
+                        <p class="font-semibold">1. Mosquito bites infected host</p>
+                    </div>
+                    <div class="text-4xl font-bold text-accent-blue hidden md:block">&rarr;</div>
+                    <div class="text-4xl font-bold text-accent-blue md:hidden">&darr;</div>
+                    <div class="flex-shrink-0 text-center p-4 bg-accent-yellow bg-opacity-20 rounded-lg border-2 border-accent-yellow">
+                        <span class="text-4xl">⏳</span>
+                        <p class="font-semibold">2. Virus Incubates (EIP)</p>
+                        <p class="text-sm">(Temperature Dependent)</p>
+                    </div>
+                    <div class="text-4xl font-bold text-accent-blue hidden md:block">&rarr;</div>
+                    <div class="text-4xl font-bold text-accent-blue md:hidden">&darr;</div>
+                    <div class="flex-shrink-0 text-center p-4 bg-gray-50 rounded-lg">
+                        <span class="text-4xl">☣️</span>
+                        <p class="font-semibold">3. Mosquito becomes infectious</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold mb-4">EIP Shortens at High Temperatures</h2>
+                <p class="text-gray-700 mb-4">Experimental data from Watts et al. (1987) on *Aedes aegypti* demonstrates a strong inverse relationship: as temperature rises, the EIP shortens dramatically. At 20°C, transmission is very slow or unlikely, creating a thermal barrier to outbreaks.</p>
+                <div class="chart-container">
+                    <canvas id="eipBarChart"></canvas>
+                </div>
+                <p class="text-center text-sm text-gray-600 mt-2">Key Takeaway: While 30°C+ leads to a fast EIP (7-10 days), colder temperatures (~20°C) extend it beyond a month, likely exceeding the mosquito's lifespan.</p>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold mb-4">What Defines "Optimal" Transmission?</h2>
+                <p class="text-gray-700 mb-4">A short EIP isn't the only factor. Overall transmission potential (modeled as $R_0$) is a balance. Extreme heat (e.g., >32°C) shortens EIP but also increases mosquito mortality, reducing the chances of transmission. The "optimum" is the peak of this balance.</p>
+                <div class="flex flex-col items-center justify-center p-4 bg-gray-50 rounded-lg space-y-4">
+                    <div class="p-3 bg-white rounded-lg shadow border font-semibold">Ambient Temperature</div>
+                    <div class="text-3xl font-bold text-accent-blue">&darr;</div>
+                    <div class="flex flex-row justify-around w-full">
+                        <div class="p-3 bg-white rounded-lg shadow text-center text-sm border-accent-blue border-l-4">EIP Duration</div>
+                        <div class="p-3 bg-white rounded-lg shadow text-center text-sm border-accent-green border-l-4">Bite Rate</div>
+                        <div class="p-3 bg-white rounded-lg shadow text-center text-sm border-accent-red border-l-4">Mosquito Lifespan</div>
+                    </div>
+                    <div class="text-3xl font-bold text-accent-blue">&darr;</div>
+                    <div class="p-3 bg-accent-blue bg-opacity-20 rounded-lg shadow border border-accent-blue font-semibold text-lg">Overall Transmission Potential ($R_0$)</div>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold mb-4">Modeled Transmission Optimum for Yellow Fever</h2>
+                <p class="text-gray-700 mb-4">By integrating EIP, mosquito survival, and bite rate, models (like Johansson et al. 2014) calculate the overall transmission potential ($R_0$) across temperatures. For Yellow Fever, the viable range is ~18°C to 31°C, but the *peak* transmission efficiency occurs at approximately **25.1°C**.</p>
+                <div class="chart-container" style="max-width: 800px; height: 350px;">
+                    <canvas id="yfR0LineChart"></canvas>
+                </div>
+                <p class="text-center text-sm text-gray-600 mt-2">Key Takeaway: The ideal temperature for a YF outbreak is not the hottest, but a moderate ~25°C, which balances a viable EIP with high mosquito survivorship.</p>
+            </div>
+            
+            <div class="md:col-span-2 bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold mb-4">Comparative Thermal Niches: YF vs. DENV</h2>
+                <p class="text-gray-700 mb-4">Different arboviruses are adapted to different thermal niches. While the sylvatic YF model peaks around 25°C, models for the more urban Dengue virus (DENV, per Mordecai et al. 2019) often show a higher optimum, around **29°C**. This suggests DENV may be more successful in hotter urban environments compared to YF.</p>
+                <div class="chart-container" style="max-width: 800px; height: 350px;">
+                    <canvas id="yfDenvLineChart"></canvas>
+                </div>
+                <p class="text-center text-sm text-gray-600 mt-2">Key Takeaway: YF and DENV have distinct optimal temperatures, influencing their specific ecological and geographical risk zones.</p>
+            </div>
+
+            <div class="md:col-span-2 bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold mb-4">Implications for Surveillance & Modeling</h2>
+                <p class="text-gray-700 mb-4">Understanding these thermal limits is essential for public health, especially in a changing climate. It allows for more accurate risk mapping and targeted surveillance.</p>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <span class="text-accent-green text-2xl mr-2">✓</span>
+                        <span>EIP is a key thermal bottleneck, especially at lower temperatures (~20°C) where transmission is severely limited.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-accent-green text-2xl mr-2">✓</span>
+                        <span>Optimal YF transmission is a balance of factors, not just EIP. The modeled peak efficiency is around **25°C**.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-accent-green text-2xl mr-2">✓</span>
+                        <span>YF and DENV have different thermal optima, which helps explain their distinct epidemiological patterns.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-accent-green text-2xl mr-2">✓</span>
+                        <span>Climate models must use these specific, non-linear thermal curves to accurately predict future arboviral risk zones.</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        (function() {
+            
+            const tooltipTitleCallback = {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            function wrapLabels(label) {
+                const maxLength = 16;
+                if (typeof label === 'string' && label.length > maxLength) {
+                    const words = label.split(' ');
+                    const lines = [];
+                    let currentLine = '';
+                    for (const word of words) {
+                        if ((currentLine + word).length <= maxLength) {
+                            currentLine += word + ' ';
+                        } else {
+                            if (currentLine.length > 0) {
+                                lines.push(currentLine.trim());
+                            }
+                            currentLine = word + ' ';
+                        }
+                    }
+                    if (currentLine.length > 0) {
+                        lines.push(currentLine.trim());
+                    }
+                    return lines;
+                }
+                return label;
+            }
+
+            const eipBarChartCtx = document.getElementById('eipBarChart').getContext('2d');
+            const eipLabels = ['20°C (Very Slow Transmission)', '25°C (Moderate Transmission)', '30-32°C (Fast Transmission)'];
+            new Chart(eipBarChartCtx, {
+                type: 'bar',
+                data: {
+                    labels: eipLabels.map(wrapLabels),
+                    datasets: [{
+                        label: 'Avg. EIP (Days)',
+                        data: [36, 12.5, 8.5],
+                        backgroundColor: ['#118AB2', '#FFD166', '#FF6B6B'],
+                        borderColor: ['#073B4C', '#073B4C', '#073B4C'],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Days to Become Infectious'
+                            }
+                        }
+                    },
+                    plugins: {
+                        ...tooltipTitleCallback.plugins,
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+
+            const yfR0LineChartCtx = document.getElementById('yfR0LineChart').getContext('2d');
+            const yfR0Labels = [18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+            new Chart(yfR0LineChartCtx, {
+                type: 'line',
+                data: {
+                    labels: yfR0Labels.map(l => `${l}°C`),
+                    datasets: [{
+                        label: 'Relative Transmission Potential (R0)',
+                        data: [0.05, 0.1, 0.3, 0.5, 0.7, 0.85, 0.95, 1.0, 0.95, 0.8, 0.6, 0.4, 0.2, 0.1],
+                        borderColor: '#118AB2',
+                        backgroundColor: 'rgba(17, 138, 178, 0.2)',
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Relative Transmission Potential (R0)'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Temperature (°C)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        ...tooltipTitleCallback.plugins,
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+
+            const yfDenvLineChartCtx = document.getElementById('yfDenvLineChart').getContext('2d');
+            const yfDenvLabels = [18, 20, 22, 24, 25, 26, 28, 29, 30, 32, 34, 36];
+            new Chart(yfDenvLineChartCtx, {
+                type: 'line',
+                data: {
+                    labels: yfDenvLabels.map(l => `${l}°C`),
+                    datasets: [
+                        {
+                            label: 'Yellow Fever (YF) (Peak ~25°C)',
+                            data: [0, 0.3, 0.7, 0.95, 1.0, 0.9, 0.6, 0.4, 0.3, 0.1, 0, 0],
+                            borderColor: '#118AB2',
+                            backgroundColor: 'transparent',
+                            tension: 0.4
+                        },
+                        {
+                            label: 'Dengue (DENV) (Peak ~29°C)',
+                            data: [0, 0.1, 0.3, 0.6, 0.7, 0.8, 0.95, 1.0, 0.95, 0.7, 0.4, 0.1],
+                            borderColor: '#06D6A0',
+                            backgroundColor: 'transparent',
+                            tension: 0.4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Relative Transmission Potential (R0)'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Temperature (°C)'
+                            }
+                        }
+                    },
+                    plugins: {
+                        ...tooltipTitleCallback.plugins,
+                        legend: {
+                            display: true,
+                            position: 'top'
+                        }
+                    }
+                }
+            });
+
+        })();
+    </script>
+</body>
+</html>

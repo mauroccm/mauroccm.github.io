@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Pitch: Climatic Drivers of Yellow Fever</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Tailwind gray-50 */
+            color: #1e293b; /* Tailwind slate-800 */
+        }
+        
+        /* Styles for the scroll-based fade-in animation */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Custom accent colors */
+        .text-primary { color: #1d4ed8; } /* blue-700 */
+        .text-accent { color: #d97706; } /* amber-600 */
+        .bg-primary { background-color: #1d4ed8; }
+        .bg-light { background-color: #eff6ff; } /* blue-50 */
+        .border-accent { border-color: #f59e0b; } /* amber-500 */
+
+        /* Simple icon styles for objectives */
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0.5rem;
+            background-color: #dbeafe; /* blue-100 */
+            color: #1d4ed8; /* blue-700 */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header / Hero Section -->
+    <div class="relative bg-white pt-16 pb-20 px-6 lg:pt-24 lg:pb-28 lg:px-8">
+        <div class="absolute inset-0">
+            <div class="h-1/3 sm:h-2/3"></div>
+        </div>
+        <div class="relative max-w-7xl mx-auto">
+            <div class="text-center">
+                <h1 class="text-3xl tracking-tight font-extrabold text-primary sm:text-5xl md:text-6xl">
+                    The Climate Connection
+                </h1>
+                <p class="mt-3 max-w-2xl mx-auto text-xl text-slate-600 sm:mt-5 md:text-2xl">
+                    Solving the Puzzle of Yellow Fever's Unprecedented Spread
+                </p>
+                <p class="mt-6 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-8 md:text-xl">
+                    A project to build an early-warning system by understanding how climate change creates new pathways for disease.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Flow -->
+    <div class="max-w-3xl mx-auto px-6 py-16 space-y-20">
+
+        <!-- Step 1: The Problem -->
+        <section class="fade-in-section">
+            <h2 class="text-base font-semibold text-accent uppercase tracking-wide">The Problem</h2>
+            <p class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">A Historic Outbreak in a New Region</p>
+            <p class="mt-6 text-lg text-slate-700 leading-8">
+                Between 2016 and 2022, Brazil faced the largest Yellow Fever outbreak in 80 years. The virus didn't just stay in its usual Amazon home. It spread over <strong>1,500 km</strong> into the country's most densely populated region, the Atlantic Forest, exposing millions of unvaccinated people to a deadly threat.
+            </p>
+            
+            <!-- === IMAGE PLACEHOLDER 1 === -->
+            <div class="mt-8 p-4 bg-slate-100 rounded-lg border border-slate-200">
+                <img src="https://placehold.co/800x600/E2E8F0/64748B?text=Map+of+Brazil%27s+Biomes+%26+Virus+Spread" 
+                     alt="Placeholder map showing virus spread from Amazon to Atlantic Forest"
+                     class="w-full h-auto rounded-md object-cover shadow-md"
+                     onerror="this.src='https://placehold.co/800x600/E2E8F0/64748B?text=Map+of+Brazil%27s+Biomes+%26+Virus+Spread'">
+                <p class="text-center text-sm text-slate-600 mt-2">
+                    <!-- Placeholder Caption -->
+                    <strong>Image:</strong> A map showing the historic Amazonian (green) and Cerrado (yellow) biomes, and the new spread into the Atlantic Forest (dark green) region.
+                </p>
+            </div>
+            <!-- === END PLACEHOLDER 1 === -->
+        </section>
+
+        <!-- Step 2: The Mystery -->
+        <section class="fade-in-section">
+            <h2 class="text-base font-semibold text-accent uppercase tracking-wide">The Mystery</h2>
+            <p class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">How Did the Virus Survive Winter?</p>
+            <p class="mt-6 text-lg text-slate-700 leading-8">
+                This spread shouldn't have been possible. The virus is transmitted by mosquitoes, and both the virus and mosquitoes die off in cold weather.
+            </p>
+            <p class="mt-4 text-lg text-slate-700 leading-8">
+                Temperatures below <strong>16°C (61°F)</strong> are a natural firewall that stops transmission. The virus's path included high-altitude regions that are normally too cold in winter.
+            </p>
+            <p class="mt-4 text-2xl font-semibold text-primary">
+                So, what changed to let the virus pass?
+            </p>
+
+            <!-- === IMAGE PLACEHOLDER 2 === -->
+            <div class="mt-8 p-4 bg-slate-100 rounded-lg border border-slate-200">
+                 <img src="https://placehold.co/800x450/E2E8F0/64748B?text=Graph:+Virus+Transmission+vs+Temperature" 
+                     alt="Placeholder graph showing virus capacity vs temperature"
+                     class="w-full h-auto rounded-md object-cover shadow-md"
+                     onerror="this.src='https://placehold.co/800x450/E2E8F0/64748B?text=Graph:+Virus+Transmission+vs+Temperature'">
+                <p class="text-center text-sm text-slate-600 mt-2">
+                    <!-- Placeholder Caption -->
+                    <strong>Image:</strong> This graph shows how mosquito vector capacity—the ability to transmit the virus—plummets at low temperatures.
+                </p>
+            </div>
+            <!-- === END PLACEHOLDER 2 === -->
+        </section>
+
+        <!-- Step 3: The Hypothesis -->
+        <section class="fade-in-section bg-light border border-blue-200 rounded-xl p-8 shadow-lg">
+            <h2 class="text-base font-semibold text-primary uppercase tracking-wide">Our Hypothesis</h2>
+            <p class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl text-primary">The "Thermal Corridor" Effect</p>
+            <p class="mt-6 text-lg text-slate-700 leading-8">
+                We believe the outbreak was enabled by anomalous climatic conditions, likely linked to the <strong>2015-2016 El Niño event</strong>.
+            </p>
+            <p class="mt-4 text-lg text-slate-700 leading-8">
+                These anomalies created <strong>"Thermal Corridors"</strong>—brief periods of unusually warm winter weather in high-altitude areas. These warm spells acted as a "bridge," allowing the virus and its mosquito vectors to survive, cross the cold barrier, and invade new, susceptible regions.
+            </p>
+        </section>
+
+        <!-- Step 4: The Objectives -->
+        <section class="fade-in-section">
+            <h2 class="text-base font-semibold text-accent uppercase tracking-wide">Our Plan</h2>
+            <p class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">Four Objectives to Find the Answer</p>
+            <p class="mt-6 text-lg text-slate-700 leading-8">
+                To prove this hypothesis and build a solution, our project is built on four key objectives.
+            </p>
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- Objective 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-primary">
+                    <div class="icon-box mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary">1. Integrate Data</h3>
+                    <p class="mt-2 text-base text-slate-600">Build a massive geo-database combining climate records, human cases, primate infections, and environmental data.</p>
+                </div>
+
+                <!-- Objective 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-primary">
+                    <div class="icon-box mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary">2. Analyze El Niño</h3>
+                    <p class="mt-2 text-base text-slate-600">Statistically link the El Niño (ENSO) phenomenon to the specific local temperature and rain anomalies that formed the "corridors."</p>
+                </div>
+
+                <!-- Objective 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-primary">
+                    <div class="icon-box mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724a1 1 0 001.553-.894V5.618a1 1 0 00-1.553-.894L15 7m0 13V7" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary">3. Model the "Corridors"</h3>
+                    <p class="mt-2 text-base text-slate-600">Use spatio-temporal modeling to identify the *exact* minimum temperatures and conditions that allowed the virus to spread.</p>
+                </div>
+
+                <!-- Objective 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-primary">
+                    <div class="icon-box mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.144-6.432M11 5.882l2.286-4.406a1.76 1.76 0 013.417.592l-2.144 6.432M11 5.882l-5.576 2.23A1.76 1.76 0 013.417 10l-2.144-6.432M11 5.882l5.576 2.23A1.76 1.76 0 0018.583 10l2.144-6.432" />
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-primary">4. Build a Risk Model</h3>
+                    <p class="mt-2 text-base text-slate-600">Create a validated predictive model that uses key climate data to forecast the *probability and direction* of future outbreaks.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 5: The Payoff/Impact -->
+        <section class="fade-in-section">
+            <div class="bg-white rounded-xl shadow-xl overflow-hidden">
+                <div class="p-10">
+                    <h2 class="text-base font-semibold text-accent uppercase tracking-wide">The Payoff & Impact</h2>
+                    <p class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">A Predictive Early-Warning System</p>
+                    <p class="mt-6 text-lg text-slate-700 leading-8">
+                        This research is not just academic. The final objective is a concrete tool for public health.
+                    </p>
+                    <p class="mt-4 text-lg text-slate-700 leading-8">
+                        By understanding the specific climate triggers, we can create an early-warning system that uses weather forecasts to predict outbreak risk <strong>months in advance</strong>. This will give public health officials the critical lead time needed to deploy vaccination campaigns, target vector control, and save lives—all before the first case is even reported.
+                    </p>
+                    <div class="mt-8">
+                        <a href="#" class="text-lg font-semibold text-primary hover:text-accent" onclick="event.preventDefault()">
+                            Learn More About Our Team & Partners &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto py-12 px-6 overflow-hidden sm:px-6 lg:px-8">
+            <p class="text-center text-base text-slate-500">
+                A research initiative to protect public health by forecasting climate-driven disease.
+            </p>
+        </div>
+    </footer>
+
+
+    <script>
+        // JavaScript for Intersection Observer to fade in sections on scroll
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll('.fade-in-section');
+
+            if ("IntersectionObserver" in window) {
+                let observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    root: null,
+                    rootMargin: "0px",
+                    threshold: 0.1
+                });
+
+                sections.forEach(section => {
+                    observer.observe(section);
+                });
+            } else {
+                // Fallback for browsers that don't support IntersectionObserver
+                sections.forEach(section => {
+                    section.classList.add('is-visible');
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
