@@ -11,116 +11,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     
-    <style>
-        /* Define custom pastel colors inspired by the infographic */
-        :root {
-            --bg-color: #f4f9f8;      /* Very light pastel green-blue */
-            --card-bg: #ffffff;
-            --primary-color: #2a9d8f;  /* Muted teal from graphic */
-            --secondary-color: #5bafc9; /* Muted blue from graphic */
-            --placeholder-bg: #e6f1f5;
-            --text-color: #374151;     /* gray-700 */
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-        }
-
-        /* Mobile-first: default to a single-column stack */
-        .card-container {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            width: 100%;
-            padding: 1rem;
-        }
-
-        .card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            background-color: var(--card-bg);
-            border-radius: 0.75rem; /* rounded-xl */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
-        }
-
-        .card:hover {
-            transform: scale(1.03);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
-        }
-
-        /* Style for the image placeholder */
-        .placeholder {
-            background-color: var(--placeholder-bg);
-            border: 2px dashed var(--secondary-color);
-            opacity: 0.7;
-            border-radius: 0.5rem; /* rounded-lg */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #555;
-            font-size: 0.875rem;
-            line-height: 1.25rem;
-        }
-
-        /* Main card title color */
-        .card h2 {
-            color: var(--primary-color);
-        }
-
-        /* Special styling for the center card */
-        .card-center {
-            border: 2px solid var(--secondary-color);
-        }
-        
-        .card-center h2 {
-            color: var(--secondary-color);
-        }
-
-        /* Desktop layout: Use 3x3 grid for 4 corners + center */
-        @media (min-width: 1024px) {
-            .card-container {
-                display: grid;
-                /* Define a 3x3 grid */
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: repeat(3, 1fr);
-                gap: 2rem;
-                width: 90vw;
-                height: 85vh; /* Set a fixed height for the viewport */
-                max-width: 1400px;
-                padding: 0;
-            }
-
-            .card {
-                height: 100%; /* Make cards fill their grid cell */
-                display: flex;
-                flex-direction: column;
-            }
-
-            /* Assign cards to grid areas */
-            .card-tl { grid-area: 1 / 1 / 2 / 2; } /* Row 1, Col 1 */
-            .card-tr { grid-area: 1 / 3 / 2 / 4; } /* Row 1, Col 3 */
-            .card-bl { grid-area: 3 / 1 / 4 / 2; } /* Row 3, Col 1 */
-            .card-br { grid-area: 3 / 3 / 4 / 4; } /* Row 3, Col 3 */
-            
-            .card-center {
-                grid-area: 2 / 2 / 3 / 3; /* Row 2, Col 2 */
-                transform: scale(1.05); /* Make center card slightly larger */
-                z-index: 10;
-            }
-
-            /* Enhance desktop hover effect */
-            .card:hover {
-                transform: scale(1.08);
-                box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* shadow-2xl */
-                z-index: 20;
-            }
-
-            .card-center:hover {
-                transform: scale(1.12); /* Even more zoom for center */
-            }
-        }
-    </style>
 </head>
 <!-- TODO: Add the navigation bar at the top of this page -->
 <body class="text-[var(--text-color)] flex flex-col items-center justify-center min-h-screen p-4 antialiased">
@@ -138,44 +30,45 @@
     <!-- Main content grid -->
     <main class="card-container">
 
-        <!-- Card 1: Top-Left -->
-        <article class="card card-tl p-6">
-            <h2 class="text-xl font-semibold mb-3">Flexible workflow</h2>
-            <p class="text-gray-600 text-sm mb-4 flex-grow">
+        <!-- Card 1: Top-Left -->        
+        <!-- <div class="bg-white/50 p-6 rounded-lg border hover:shadow-lg transition-shadow duration-300" style="border-color: var(--border-color);"> --->
+        <div class="card card-tl p-6">
+            <h3 class="font-bold text-lg mb-2">Flaxible workflow</h3>
+            <div class="placeholder w-full h-24">Image Placeholder</div>
+            <p class="mb-4" style="color: #5a5a5a;">
                 R package & Standalone tool.
             </p>
-            <div class="placeholder w-full h-24">Image Placeholder</div>
-        </article>
+        </div>        
 
         <!-- Card 2: Top-Right -->
         <article class="card card-tr p-6">
             <h2 class="text-xl font-semibold mb-3">Spatial expression data compatibility</h2>
+            <div class="placeholder w-full h-24">Image Placeholder</div>
             <p class="text-gray-600 text-sm mb-4 flex-grow">
                 <br>Image-based (CosMX, Zenium).
                 <br>Array-based (Visium, Stereo-seq).
             </p>
-            <div class="placeholder w-full h-24">Image Placeholder</div>
         </article>
 
         <!-- Card 3: Bottom-Left -->
         <article class="card card-bl p-6">
             <h2 class="text-xl font-semibold mb-3">Key advantages</h2>
+            <div class="placeholder w-full h-24">Image Placeholder</div>
             <p class="text-gray-600 text-sm mb-4 flex-grow">
                 <br>Resolves spatial heterogeneity.
                 <br>Biological interpretation of spatial patterns.
                 <br>Robust to noise and cross-platform.
             </p>
-            <div class="placeholder w-full h-24">Image Placeholder</div>
         </article>
 
         <!-- Card 4: Bottom-Right -->
         <article class="card card-br p-6">
             <h2 class="text-xl font-semibold mb-3">Integrated analysis</h2>
+            <div class="placeholder w-full h-24">Image Placeholder</div>
             <p class="text-gray-600 text-sm mb-4 flex-grow">
                 <br>Cell composition profiling.
                 <br>Functional distances and intersections.
             </p>
-            <div class="placeholder w-full h-24">Image Placeholder</div>
         </article>
 
         <!-- Card 5: Center -->
