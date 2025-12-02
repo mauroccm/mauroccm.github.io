@@ -13,6 +13,10 @@ body {
     color: var(--text-color);
 }
 
+h1, h2, h3, .header-font {
+            font-family: 'Montserrat', sans-serif;
+}
+
 /* Animation for elements fading in on scroll */
 .fade-in-section {
     opacity: 0;
@@ -89,9 +93,11 @@ body {
 
 .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: var(--card-bg);
+    background-color: white;
     border-radius: 0.75rem; /* rounded-xl */
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+    display: flex;
+    flex-direction: column;
 }
 
 .card:hover {
@@ -125,6 +131,33 @@ body {
         
 .card-center h2 {
     color: var(--secondary-color);
+}
+
+.chart-container {
+    position: relative;
+    height: 250px; 
+    width: 100%;
+}
+
+.dashed-placeholder {
+    border: 3px dashed #cbd5e1;
+    background-color: #f8fafc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    border-radius: 12px;
+    color: #64748b;
+}
+
+.icon-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
 }
 
 /* Desktop layout: Use 3x3 grid for 4 corners + center */
