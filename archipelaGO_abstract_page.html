@@ -1,23 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ArchipelaGO: Uncovering Tissue Functional Space</title>
-    
-    <!-- Load Tailwind CSS -->
+    <title>ArchipelaGO Abstract Page</title>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
-    <!-- Load Inter font -->
+    <!-- Google Fonts for a professional look -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+    
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
-    
+
 </head>
 <body class="text-slate-800">
 
@@ -26,10 +27,10 @@
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html#" class="text-xl font-bold" style="color: var(--text-color);">Mauro Morais</a>
             <div class="hidden md:flex space-x-8">
-                <a href="index.html#research" class="hover:text-red-400 transition-colors duration-300" style="color:var(--text-color); --tw-hover-text-opacity: 1; color: rgba(58, 58, 58, var(--tw-hover-text-opacity));">Research</a>
-                <a href="index.html#activities" class="hover:text-red-400 transition-colors duration-300" style="color:var(--text-color); --tw-hover-text-opacity: 1; color: rgba(58, 58, 58, var(--tw-hover-text-opacity));">Activities</a>
-                <a href="index.html#education" class="hover:text-red-400 transition-colors duration-300" style="color:var(--text-color); --tw-hover-text-opacity: 1; color: rgba(58, 58, 58, var(--tw-hover-text-opacity));">Education</a>
-                <a href="https://www.linkedin.com/in/mauro-cafund%C3%B3-de-morais/" target="_blank" rel="noopener noreferrer" class="hover:text-red-400 transition-colors duration-300" style="color:var(--text-color); --tw-hover-text-opacity: 1; color: rgba(58, 58, 58, var(--tw-hover-text-opacity));">News</a>
+                <a href="index.html#research" class="hover:text-red-400 transition-colors duration-300" style="color:var(--text-color);">Research</a>
+                <a href="index.html#activities" class="hover:text-red-400 transition-colors duration-300" style="color:var(--text-color);">Activities</a>
+                <a href="index.html#education" class="hover:text-red-400 transition-colors duration-300" style="color:var(--text-color);">Education</a>
+                <a href="https://www.linkedin.com/in/mauro-cafund%C3%B3-de-morais/" target="_blank" rel="noopener noreferrer" class="hover:text-red-400 transition-colors duration-300" style="color:var(--text-color);">News</a>
             </div>
             <button id="mobile-menu-button" class="md:hidden" style="color: var(--text-color);">
                 <i class="fas fa-bars fa-lg"></i>
@@ -45,13 +46,13 @@
     </header>
 
     <!-- Main content grid -->
-    <main class="card-container">
+    <main class="card-container mt-12 mx-6 md:mx-12">
+        <!-- Added margin-top (mt-12) for space below the menu -->
+        <!-- Added margin-left and margin-right (mx-6 for small screens, md:mx-12 for medium and larger screens) -->
         
         <!-- Card 1: Top-Left -->        
-        <!-- TODO: All cards should have the same style as card 1-->
-        <!-- <div class="bg-white/50 p-6 rounded-lg border hover:shadow-lg transition-shadow duration-300" style="border-color: var(--border-color);"> --->
         <div class="card card-tl p-6">
-            <h3 class="font-bold text-lg mb-2">Flaxible workflow</h3>
+            <h3 class="font-bold text-lg mb-2">Flexible workflow</h3>
             <div class="placeholder w-full h-24">Image Placeholder</div>
             <p class="mb-4" style="color: #5a5a5a;">
                 R package & Standalone tool.
@@ -99,6 +100,33 @@
         </article>
 
     </main>
+
+    <!-- Footer Section -->
+    <footer class="mt-12" style="background-color: #3a3a3a; color: #d1d1d1; width: 100vw; margin-left: calc(-50vw + 50%);">
+        <!-- Added margin-top (mt-12) for space above the footer -->
+        <div class="mt-4 flex justify-center space-x-6 py-6">
+            <a href="mailto:mauro_morais@pasteur-sp-org.br" aria-label="Email" class="custom-link">
+                <i class="fas fa-envelope fa-2x"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/mauro-cafund%C3%B3-de-morais/" aria-label="LinkedIn" class="custom-link">
+                <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            <a href="https://github.com/mauroccm" aria-label="GitHub" class="custom-link">
+                <i class="fab fa-github fa-2x"></i>
+            </a>
+            <a href="https://scholar.google.com/citations?user=qs6DKacAAAAJ&hl=pt-BR" aria-label="Google Scholar" class="custom-link">
+                <i class="fas fa-graduation-cap fa-2x"></i>
+            </a>
+            <a href="https://orcid.org/0000-0003-4248-750X" aria-label="ORCID" class="custom-link">
+                <i class="fab fa-orcid fa-2x"></i>
+            </a>
+        </div>
+
+        <div class="container mx-auto px-6 py-6 text-center">
+            <p>&copy; <span id="year">2025</span> Mauro Morais. All Rights Reserved.</p>
+            <p class="text-sm mt-2" style="color: #a1a1a1;">Design with the help of LLM <span style="text-decoration: line-through;">fools</span> tools.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
