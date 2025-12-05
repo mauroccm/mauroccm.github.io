@@ -160,6 +160,14 @@ h1, h2, h3, .header-font {
     margin-right: 12px;
 }
 
+.my-red {
+    color: #d96666;
+}
+
+.my-slide {
+    text-align: center;
+}
+
 /* Desktop layout: Use 3x3 grid for 4 corners + center */
 @media (min-width: 1024px) {
     .card-container {

@@ -1,0 +1,144 @@
+---
+title: "Mapping Environmental Barriers to Arbovirus Outbreaks in Brazil"
+subtitle: "How climate variables affect the distribution of mosquito-borne viruses?"
+format:
+  revealjs: 
+    transition: fade
+    slide-number: true
+    chalkboard: 
+      buttons: true
+    preview-links: auto
+    logo: figures/logo_botom.png
+    css: "style.css"
+---
+
+## 🧩 Puzzle
+
+- The 2016-2022 Yellow Fever (YF) wave was **unprecedented**. It breached historical barriers, spreading from the Amazon through the Cerrado and into the densely populated **Atlantic Forest**.
+
+- [Critical questions:]{.my-red}
+  - _How did the virus persist through temperate winters and high-altitude regions (< 16°C) that should have stopped transmission?_
+
+## 🌡️ Hypothesis
+
+- We propose that **anomalous weather conditions** (climate change & variability) created temporary bridges for viral survival.
+  - Warmer Winters: Prevented viral die-off in historically cold zones.
+  - Altered Rainfall: Sustained vector populations during dry seasons.
+
+## Background {.scrollable .smaller}
+
+Temperature anomalies are the biological constraints of the virus. The viral incubation speed depends on temperature conditions ([Bellone and Failoux, 2025](https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2020.584846/full); [Johanssen et al, 2010](https://www.ajtmh.org/view/journals/tpmd/83/1/article-p183.xml)).
+
+::::{.columns}
+
+::: {.column width="50%"}
+![Viral incubation speed.](./figures/temperature_hypothesis.png){width="4in" height="4in"}
+:::
+
+::: {.column width="50%"}
+```{r}
+#| label: temp_R0_plot
+#| fig-cap: "Relationship between temperature and R0 value for Yellow Fever virus transmission."
+#| echo: false
+#| fig-width: 6
+#| fig-heigh: 4 
+library(ggplot2)
+temp_R0 <- data.frame(
+  temp = c(18, 20, 22, 24, 25, 26, 28, 30, 32),
+  R0_value = c(0.05, 0.3, 0.7, 0.95, 1.0, 0.95, 0.6, 0.2, 0.05)
+)
+ggplot(temp_R0, aes(temp, R0_value)) +
+  geom_line(color="#0d88f0", size=2) +
+  geom_point(shape=21, fill="#4bc8ef", color="#0d88f0", size=4) +
+  labs(x = "Temperature (°C)", y = "R0 value") +
+  theme_light() + 
+  theme(
+    axis.title = element_text(size=14),
+    axis.text = element_text(size=12))
+```
+:::
+
+::::
+
+## {.smaller}
+
+Expected minimum temperature for Brazil (left), with emphasis on the Southeast region (right). The reference temperature was obtained by averaging the weekly minimal temperature between 1986 and 2015.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](figures/minimal_temperature_ref_animation.gif)
+:::
+
+::: {.column width="50%"}
+![](figures/minimal_temperature_ref_SE_animation.gif)
+:::
+
+::::
+
+## {.smaller}
+
+Climate anomalies during the YF outbreak
+
+![Municipalities affected by yellow fever in the Southeast region of Brazil between January 2016 and June 2025 (red line). Municipalities affected by minimum temperature anomalies in the Southeast region of Brazil between January 2016 and June 2025 (dashed blue line). Data were aggregated by epidemiological week. We considered a climatic anomaly as a minimum temperature above 5 standard deviations from the expected average for the 30-year period (1986–2015).](figures/time_nCases_nAnomalies.png){width="100%"}
+
+Source: [OpenDataSUS](https://opendatasus.saude.gov.br/); [Coopernicus CDS](https://cds.climate.copernicus.eu/).
+
+## {.smaller}
+
+- TODO Add map of cases figures
+
+## Objectives {.smaller}
+
+1. **Data Integration**
+  - Building a comprehensive database linking NHP epizootics with fine-scale climate data (Temp, Rain, Wind, Vegetation).
+2. **Spatio-Temporal Model**
+  - Identifying "Thermal Corridors" and analyzing how microclimates allowed viral persistence during winter.
+3. **Predictive Forecasting**
+  - Developing a risk model using climate indicators as "early warning" signals for future outbreaks.
+
+## Scientific Challenges
+
+::::{.columns}
+
+::: {.column width="50%"}
+- ⚠️ **Sampling Bias**
+  - Dead monkeys are only found where people look.  
+  - [**Solution:** Occupancy Modeling & "Observer Bias" Covariates.]{.my-red}
+:::
+
+::: {.column width="50%"}
+- ⚠️ **Microclimate vs. Macroclimate**
+  - Satellites miss the warm tree hollows where mosquitoes hide.
+  - [**Solution:** Topographic Downscaling & Canopy Adjustment.]{.my-red}
+:::
+
+::::
+
+## Relevance and Impact {.smaller}
+
+- 🚀 **Proactive Surveillance:** Moving from reactive monitoring to early warning.
+- 🛡️ **Public Health:** Enabling vaccination campaigns months in advance.
+- 🌍 **Scalability:** A framework replicable for WNV and Leishmaniasis.
+
+<br/>
+
+- PARTNERS AND FUNDING
+  - [FIOCRUZ](https://climaesaude.icict.fiocruz.br/)
+  - Pasteur Network
+  - USP
+  - Rockefeller Foundation
+  - IOP of Hong Kong
+  - [Climate & Health Observatory Accelerator Project](https://pasteur-network.org/what-we-do/projects/climate-and-health-observatory-accelerator-project/)
+
+## Thank You! {.my-slide}
+
+<br/>
+
+Questions & Discussion
+
+<br/>
+
+Mauro MORAIS  
+Institut Pasteur de São Paulo (IPSP)  
+[mauro_morais@pasteur-sp.org.br](mailto:mauro_morais@pasteur-sp.org.br)
