@@ -46,7 +46,7 @@
     </header>
 
     <!-- Main Content -->
-    <main class="max-w-7xl mt-6 mx-6 md:mx-6 grid grid-cols-1 md:grid-cols-12 gap-6">
+    <main class="max-w-7xl mt-6 mx-auto grid grid-cols-1 md:grid-cols-12 gap-6">
     
         <!-- 1. The Context (Full Width) -->
         <div class="md:col-span-12 lg:col-span-6 card p-6 border-l-8 border-[#d96666]">
@@ -77,11 +77,12 @@
         </div>
 
         <!-- 3. Scientific Basis (Charts) - Reused from previous work -->
-        <div class="md:col-span-12 lg:col-span-8 card p-6 border-l-8 border-[#d96666]">
+        <div class="md:col-span-12 lg:col-span-12 card p-6 border-l-8 border-[#d96666]">
+
             <h2 class="text-2xl font-bold text-slate-700 mb-2">Background</h2>
             <p class="text-sm text-gray-500 mb-6">Temperature anomalies are the biological constraints of the virus.</p>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <!-- Chart 1: Viral Incubation Speed (Replaced with SVG) -->
                 <div>
                     <h3 class="font-bold text-sm text-center mb-2 uppercase text-gray-600">Viral Incubation Speed</h3>
@@ -100,10 +101,19 @@
                     </div>
                     <p class="text-xs text-gray-500 mt-2 text-center">Peak risk is at ~25.1°C. Climate anomalies pushed cold regions into this "danger zone".</p>
                 </div>
+
+                <!-- Chart 3: Map -->
+                 <div>
+                    <h3 class="font-bold text-sm text-center mb-2 uppercase text-gray-600">Temperature Anomalies (2016-2022)</h3>
+                    <div class="chart-container flex items-center justify-center rounded-lg">
+                        <img src="./figures/municipalities_anomalies_YFcases_SE.png" alt="Temperature Anomalies Map" class="max-w-full max-h-full object-contain p-2">
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2 text-center">Regions that experienced significant warming during the YF outbreak period.</p>
+                 </div>
             </div>
         </div>
 
-        <!-- 4. The Placeholder (Climate Anomalies) -->
+        <!-- 4. The Placeholder (Climate Anomalies) 
         <div class="md:col-span-12 lg:col-span-4 card border-2 border-dashed border-gray-300 bg-gray-50 p-4 flex flex-col justify-center text-center">
             <div class="dashed-placeholder flex flex-col">
                 <svg class="w-16 h-16 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -111,7 +121,7 @@
                 <p class="text-gray-500 mt-2 text-sm px-6">Blank Placeholder</p>
                 <p class="text-xs text-gray-400 mt-4">(Insert Map/Data Here)</p>
             </div>
-        </div>
+        </div> -->
 
         <!-- 5. Objectives & Methodology -->
         <div class="md:col-span-12 md:grid md:grid-cols-3 gap-6">
