@@ -5,11 +5,10 @@ format:
   revealjs: 
     transition: fade
     slide-number: true
-    chalkboard: 
-      buttons: true
     preview-links: auto
     logo: figures/logo_botom.png
     css: "style.css"
+    embed-resources: true
 ---
 
 ## 🧩 Puzzle
