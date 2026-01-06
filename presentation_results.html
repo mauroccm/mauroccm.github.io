@@ -199,25 +199,8 @@
 <section id="section-2" class="slide level2 smaller">
 <h2></h2>
 <p>Association of cases and climate anomalies</p>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Humans</a></li><li><a href="#tabset-1-2">NHP</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="figures/spatial_cases_temperature.jpg"></p>
-<figcaption>The number of climate anomalies is associated with the number of YF cases in nonh-human primates (left) and humans (right) in specific municipalites.</figcaption>
-</figure>
-</div>
-</div>
-<div id="tabset-1-2">
-<ul>
-<li>TODO Test if it is better to split by type of cases(humans | NHP) or by type of data (map | data.frame).</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
+
+<img data-src="figures/spatial_cases_temperature.jpg" class="r-stretch quarto-figure-center"><p class="caption">The number of climate anomalies is associated with the number of YF cases in nonh-human primates (left) and humans (right) in specific municipalites.</p></section>
 <section id="objectives" class="slide level2 smaller">
 <h2>Objectives</h2>
 <ol type="1">
@@ -512,80 +495,42 @@ Institut Pasteur de São Paulo (IPSP)<br>
       });
     </script>
     
-
     <script>
-
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-
       // slide changes (different for each slide format).
-
       (function () {
-
         // dispatch for htmlwidgets
-
         function fireSlideEnter() {
-
           const event = window.document.createEvent("Event");
-
           event.initEvent("slideenter", true, true);
-
           window.document.dispatchEvent(event);
-
         }
-
-    
 
         function fireSlideChanged(previousSlide, currentSlide) {
-
           fireSlideEnter();
 
-    
-
           // dispatch for shiny
-
           if (window.jQuery) {
-
             if (previousSlide) {
-
               window.jQuery(previousSlide).trigger("hidden");
-
             }
-
             if (currentSlide) {
-
               window.jQuery(currentSlide).trigger("shown");
-
             }
-
           }
-
         }
-
-    
 
         // hookup for slidy
-
         if (window.w3c_slidy) {
-
           window.w3c_slidy.add_observer(function (slide_num) {
-
             // slide_num starts at position 1
-
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-
           });
-
         }
 
-    
-
       })();
-
     </script>
-
-    
 
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
