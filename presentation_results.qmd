@@ -88,7 +88,7 @@ Source: [OpenDataSUS](https://opendatasus.saude.gov.br/); [Coopernicus CDS](http
 
 Association of cases and climate anomalies
 
-![The number of climate anomalies is associated with the number of YF cases in nonh-human primates (left) and humans (right) in specific municipalites.](figures/spatial_cases_temperature.jpg)
+![The number of climate anomalies is associated with the number of YF cases in non-human primates (left) and humans (right) in specific municipalites.](figures/spatial_cases_temperature.jpg)
 
 ## Objectives {.smaller}
 
