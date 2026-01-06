@@ -46,21 +46,21 @@
     </header>
 
     <!-- Main content grid -->
-    <main class="card-container center mt-12 mx-6 md:mx-12">
-        <!-- Added margin-top (mt-12) for space below the menu -->
-        <!-- Added margin-left and margin-right (mx-6 for small screens, md:mx-12 for medium and larger screens) -->
-        
-        <!-- Card 1: Top-Left -->        
-        <div class="card card-tl p-6">
+    <main class="card-container mt-12 mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 min-h-screen items-center">
+        <!-- Added min-h-screen to ensure the main content takes at least the full height of the viewport -->
+        <!-- Added items-center to vertically center the grid content -->
+
+        <!-- Card 1: Top-Left -->
+        <div class="card card-tl p-6 md:col-span-6 lg:col-span-4 border-l-8 border-[#d96666]">
             <h3 class="font-bold text-lg mb-2">Flexible workflow</h3>
             <div class="placeholder w-full h-24">Image Placeholder</div>
             <p class="mb-4" style="color: #5a5a5a;">
                 R package & Standalone tool.
             </p>
-        </div>        
+        </div>
 
         <!-- Card 2: Top-Right -->
-        <article class="card card-tr p-6">
+        <article class="card card-tr p-6 md:col-span-6 lg:col-span-4 border-l-8 border-[#d96666]">
             <h2 class="text-xl font-semibold mb-3">Spatial expression data compatibility</h2>
             <div class="placeholder w-full h-24">Image Placeholder</div>
             <p class="text-gray-600 text-sm mb-4 flex-grow">
@@ -70,7 +70,7 @@
         </article>
 
         <!-- Card 3: Bottom-Left -->
-        <article class="card card-bl p-6">
+        <article class="card card-bl p-6 md:col-span-6 lg:col-span-4 border-l-8 border-[#d96666]">
             <h2 class="text-xl font-semibold mb-3">Key advantages</h2>
             <div class="placeholder w-full h-24">Image Placeholder</div>
             <p class="text-gray-600 text-sm mb-4 flex-grow">
@@ -81,7 +81,7 @@
         </article>
 
         <!-- Card 4: Bottom-Right -->
-        <article class="card card-br p-6">
+        <article class="card card-br p-6 md:col-span-6 lg:col-span-4 border-l-8 border-[#d96666]">
             <h2 class="text-xl font-semibold mb-3">Integrated analysis</h2>
             <div class="placeholder w-full h-24">Image Placeholder</div>
             <p class="text-gray-600 text-sm mb-4 flex-grow">
@@ -91,14 +91,13 @@
         </article>
 
         <!-- Card 5: Center -->
-        <article class="card card-center p-8 flex flex-col justify-center items-center text-center">
-            <h2 class="text-2xl lg:text-3xl font-bold mb-4">Functional Islands</h2>            
+        <article class="card card-center p-8 flex flex-col justify-center items-center text-center md:col-span-12 lg:col-span-8">
+            <h2 class="text-2xl lg:text-3xl font-bold mb-4">Functional Islands</h2>
             <div class="placeholder w-full h-32">Image Placeholder</div>
             <p class="text-gray-700 text-base mb-6 flex-grow">
                 Spatial gene set enrichment to identify tissue functional modules.
             </p>
         </article>
-
     </main>
 
     <!-- Footer Section -->
