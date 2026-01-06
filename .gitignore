@@ -135,4 +135,3 @@ dmypy.json
 # Quarto
 /.quarto/
 /_site/
-presentation_results_files/
