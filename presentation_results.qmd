@@ -59,9 +59,18 @@ ggplot(temp_R0, aes(temp, R0_value)) +
 
 ::::
 
+## 🎯 Objectives {.smaller}
+
+1. **Data Integration**
+  - Building a comprehensive database linking NHP epizootics with fine-scale climate data (Temp, Rain, Wind, Vegetation).
+2. **Spatio-Temporal Model**
+  - Identifying "Thermal Corridors" and analyzing how microclimates allowed viral persistence during winter.
+3. **Predictive Forecasting**
+  - Developing a risk model using climate indicators as "early warning" signals for future outbreaks.
+
 ## {.smaller}
 
-Expected minimum temperature for Brazil (left), with emphasis on the Southeast region (right). The reference temperature was obtained by averaging the weekly minimal temperature between 1986 and 2015.
+[Temperature corridors]{style="font-weight: bold;"}
 
 :::: {.columns}
 
@@ -75,28 +84,31 @@ Expected minimum temperature for Brazil (left), with emphasis on the Southeast r
 
 ::::
 
+Expected minimum temperature for Brazil (left), with emphasis on the Southeast region (right). The reference temperature was obtained by averaging the weekly minimal temperature between 1986 and 2015.
+
 ## {.smaller}
 
-Climate anomalies during the YF outbreak
+[Climate anomalies during the YF outbreak]{style="font-weight: bold;"}
 
 ![Municipalities affected by yellow fever in the Southeast region of Brazil between January 2016 and June 2025 (red line). Municipalities affected by minimum temperature anomalies in the Southeast region of Brazil between January 2016 and June 2025 (dashed blue line). Data were aggregated by epidemiological week. We considered a climatic anomaly as a minimum temperature above 5 standard deviations from the expected average for the 30-year period (1986–2015).](figures/time_nCases_nAnomalies.png){width="100%"}
 
-Source: [OpenDataSUS](https://opendatasus.saude.gov.br/); [Coopernicus CDS](https://cds.climate.copernicus.eu/).
+[Source: [OpenDataSUS](https://opendatasus.saude.gov.br/); [Coopernicus CDS](https://cds.climate.copernicus.eu/).]{style="font-size: 0.75em;"}
 
 ## {.smaller}
 
-Association of cases and climate anomalies
+[Association of affected municipalities and climate anomalies]{style="font-weight: bold;"}
 
-![The number of climate anomalies is associated with the number of YF cases in non-human primates (left) and humans (right) in specific municipalites.](figures/spatial_cases_temperature.jpg)
+:::: {.columns}
 
-## Objectives {.smaller}
+::: {.column width="50%"}
+![Expected minimum temperature for the Southeast region of Brazil. The reference temperature was obtained by averaging the weekly minimal temperature between 1986 and 2015.](figures/minimal_temperature_ref_SE_animation.gif)
+:::
 
-1. **Data Integration**
-  - Building a comprehensive database linking NHP epizootics with fine-scale climate data (Temp, Rain, Wind, Vegetation).
-2. **Spatio-Temporal Model**
-  - Identifying "Thermal Corridors" and analyzing how microclimates allowed viral persistence during winter.
-3. **Predictive Forecasting**
-  - Developing a risk model using climate indicators as "early warning" signals for future outbreaks.
+::: {.column width="50%"}
+![Number of temperature anomalies and reported NHP yellow fever cases per municipality in the Southeast region of Brazil between January 2016 and June 2025.](figures/municipalities_anomalies_NHPcases_SE.png)
+:::
+
+::::
 
 ## Scientific Challenges
 
