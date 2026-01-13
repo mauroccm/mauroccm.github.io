@@ -141,12 +141,11 @@ ggplot(temp_R0, aes(temp, R0_value)) +
 <br/>
 
 - PARTNERS AND FUNDING
-  - [FIOCRUZ](https://climaesaude.icict.fiocruz.br/)
-  - Pasteur Network
-  - USP
+  - [Climante and Health Observatory](https://climaesaude.icict.fiocruz.br/), FIOCRUZ
+  - [Climate & Health Observatory Accelerator Project](https://pasteur-network.org/what-we-do/projects/climate-and-health-observatory-accelerator-project/), Pasteur Network
+  - University of São Paulo (USP)
   - Rockefeller Foundation
   - IOP of Hong Kong
-  - [Climate & Health Observatory Accelerator Project](https://pasteur-network.org/what-we-do/projects/climate-and-health-observatory-accelerator-project/)
 
 ## Thank You! {.my-slide}
 
