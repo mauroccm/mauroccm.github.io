@@ -75,16 +75,16 @@ ggplot(temp_R0, aes(temp, R0_value)) +
 :::: {.columns}
 
 ::: {.column width="50%"}
-![](figures/minimal_temperature_ref_animation.gif)
+![Expected minimum temperature for Brazil along the year.](figures/minimal_temperature_ref_animation.gif)
 :::
 
 ::: {.column width="50%"}
-![](figures/minimal_temperature_ref_SE_animation.gif)
+![Expected minimal temperature of each municipality in the south east (SE) region of Brazil along the year. The reference temperature was obtained by averaging the weekly minimal temperature between 1986 and 2015.](figures/reference_temperature_SE.png)
 :::
 
 ::::
 
-Expected minimum temperature for Brazil (left), with emphasis on the Southeast region (right). The reference temperature was obtained by averaging the weekly minimal temperature between 1986 and 2015.
+<!--- []{style="font-size: 0.75em;"} --->
 
 ## {.smaller}
 
@@ -101,11 +101,15 @@ Expected minimum temperature for Brazil (left), with emphasis on the Southeast r
 :::: {.columns}
 
 ::: {.column width="50%"}
-![Expected minimum temperature for the Southeast region of Brazil. The reference temperature was obtained by averaging the weekly minimal temperature between 1986 and 2015.](figures/minimal_temperature_ref_SE_animation.gif)
+
+![Number of non-human primate (NHP) yellow fever cases per municipality in the Southeast region of Brazil between January 2016 and June 2025.](figures/municipalities_NHPcases_SE.png)
+
+<!--- ![Expected minimum temperature for the Southeast region of Brazil. The reference temperature was obtained by averaging the weekly minimal temperature between 1986 and 2015.](figures/minimal_temperature_ref_SE_animation.gif) --->
+
 :::
 
 ::: {.column width="50%"}
-![Number of temperature anomalies and reported NHP yellow fever cases per municipality in the Southeast region of Brazil between January 2016 and June 2025.](figures/municipalities_anomalies_NHPcases_SE.png)
+![Number of temperature anomalies per municipality in the Southeast region of Brazil between January 2016 and June 2025.](figures/municipalities_anomalies_SE.png)
 :::
 
 ::::
