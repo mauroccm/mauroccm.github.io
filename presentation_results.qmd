@@ -26,15 +26,12 @@ format:
 
 ## Background {.scrollable .smaller}
 
-Temperature anomalies are the biological constraints of the virus. The viral incubation speed depends on temperature conditions ([Bellone and Failoux, 2025](https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2020.584846/full); [Johanssen et al, 2010](https://www.ajtmh.org/view/journals/tpmd/83/1/article-p183.xml)).
+Temperature anomalies are the biological constraints of the virus. The viral extrinsic incubation period depends on temperature conditions ([Bellone and Failoux, 2025](https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2020.584846/full); [Johanssen et al, 2010](https://www.ajtmh.org/view/journals/tpmd/83/1/article-p183.xml)).
 
-::::{.columns}
+![Viral incubation speed.](./figures/temperature_hypothesis.png){width="5in" height="5in"}
 
-::: {.column width="50%"}
-![Viral incubation speed.](./figures/temperature_hypothesis.png){width="4in" height="4in"}
-:::
+## Background {.scrollable .smaller}
 
-::: {.column width="50%"}
 ```{r}
 #| label: temp_R0_plot
 #| fig-cap: "Relationship between temperature and R0 value for Yellow Fever virus transmission."
@@ -55,9 +52,6 @@ ggplot(temp_R0, aes(temp, R0_value)) +
     axis.title = element_text(size=14),
     axis.text = element_text(size=12))
 ```
-:::
-
-::::
 
 ## 🎯 Objectives {.smaller}
 
