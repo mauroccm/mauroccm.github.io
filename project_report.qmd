@@ -1,0 +1,99 @@
+---
+title: "2026 Project Progress & Planning Report"
+subtitle: "Project Status, Global Goods, and Sustainability"
+author: "Mauro Morais"
+date: "2026-02-05"
+format:
+  revealjs:
+    theme: sky
+    transition: fade
+    scrollable: true
+    slide-number: true
+    embed-resources: false
+---
+
+## 1. Project Output
+**Objective:** Consolidate technical results generated to date (scientific publication).
+
+- Integration of climate data (Copernicus CDS) with public health indicators (OpenDATASUS).
+- Visualizations processed in R and exported for geospatial analysis.
+  - ✅ Temperature and NHP Yellow Fever cases association maps;
+  - 🔲 Train an ML/DL model to identify variables (temperature, humidity, etc.) that affect the outcome (cases); 
+  - 🔲 Compare the results with data from Africa (if possible).
+
+---
+
+## 2. Stakeholder Commitments
+
+- **Engagement:** Identify communication channels with public health authorities for climate-sensitive disease surveillance in the city of São Paulo.
+
+---
+
+## 3. Global Goods
+
+- **Documentation:** Developing a model, in partnership with a Professor from the University of São Paulo (Prof. Adriano Pinter), for mapping cases of yellow fever in the southeastern region of the State of São Paulo. 
+- The results are in the presentation: 
+  - [Presentation results](https://mauroccm.github.io/presentation_results.html#/title-slide).
+
+---
+
+## 4. Knowledge Sharing
+**Collaboration and Exchange:**
+
+- Project panel: 
+  - [Project Summary](https://mauroccm.github.io/climate_YFV_project_summary.html).
+- Identify conferences and workshops for presenting results.
+<!--
+- **Code Sharing:** Git repositories containing geospatial analysis scripts.
+- **Peer Exchange:** Active collaboration with the fellowship cohort and presentations in internal seminars.
+- **Global Exchange:** Technical discussions with international experts on arbovirus modeling.
+-->
+
+---
+
+## 5. Training Activities
+
+- **PhD student co-supervision**
+  - Her project involves modeling American Cutaneous Leishmaniasis (ACL) with climate data from the Amazon region.
+- **Upcomming lectures:**
+  - I was invited to give a lecture in the "One Health" specialization course promoted by Insituto Butantã (a São Paulo State public health institution). The lecture will focus on using climate data for epidemiological modeling of vector-borne diseases.
+
+---
+
+## 6. Public Health Action
+
+- **Expectation**: the model will serve as a guide for vaccination campaigns against yellow fever (and other climate-sensitive diseases). 
+- **Limitation**: "Translation" of academic modeling into something that public policy makers can use is something that I don't know (yet) how to do.
+- **Intentions:** Planning of new actions based on insights from deforestation and climate data.
+<!--
+- **Qualitative Changes:** Description of how the work influenced decision-making or fostered new collaborations.
+- **Impact Reports:** Links to public posts or articles describing real-world model applications.
+-->
+
+---
+
+## 7. Sustainability
+
+- **Funding Proposals:** I applied for a grant last year from the University of São Paulo Foundation (FUSP) along with other IPSP researchers to fund projects on Climate and Health, but without success.
+  - I'm writing a project to identify perceptions about vaccination and climate change in the city of São Paulo.
+- **New Partnerships:** Formalization of strategic agreements to ensure project longevity.
+
+---
+
+## 8. 2026 Roadmap (Gantt Chart)
+**Major Milestones and Planning**
+
+```{mermaid}
+gantt
+    title Project Timeline 2026
+    dateFormat  YYYY-MM-DD
+    section Technical
+    Data Refinement           :a1, 2026-02-01, 60d
+    Model Validation          :after a1, 30d
+    section Engagement
+    Stakeholder Meetings      :b1, 2026-04-01, 60d
+    Training Workshops        :after b1, 30d
+    section Sustainability
+    Funding Proposals         :c1, 2026-06-01, 60d
+    Final Report              :after c1, 30d
+```
