@@ -9,7 +9,7 @@ format:
     transition: fade
     scrollable: true
     slide-number: true
-    embed-resources: false
+    embed-resources: true
 ---
 
 ## 1. Project Output
