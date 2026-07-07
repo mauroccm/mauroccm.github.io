@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project timeline — Mauro Morais</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ── Slide-in animations (extend the site's fade-in pattern) ── */
+        .slide-left,
+        .slide-right {
+            opacity: 0;
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .slide-left  { transform: translateX(-40px); }
+        .slide-right { transform: translateX( 40px); }
+        .slide-left.is-visible,
+        .slide-right.is-visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        /* Mobile: all items slide up instead of sideways */
+        @media (max-width: 767px) {
+            .slide-left,
+            .slide-right { transform: translateY(24px); }
+            .slide-left.is-visible,
+            .slide-right.is-visible { transform: translateY(0); }
+        }
+
+        /* ── Centered vertical timeline track ── */
+        .timeline-track {
+            position: relative;
+        }
+        .timeline-track::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--border-color);
+            transform: translateX(-50%);
+        }
+        /* Dashed line for future section */
+        .timeline-track-future::before {
+            background: repeating-linear-gradient(
+                to bottom,
+                #b0b8c1 0px,
+                #b0b8c1 8px,
+                transparent 8px,
+                transparent 16px
+            );
+        }
+        /* Mobile: move line to the left */
+        @media (max-width: 767px) {
+            .timeline-track::before {
+                left: 1rem;
+            }
+        }
+
+        /* ── Timeline entry wrapper ── */
+        .tl-entry {
+            position: relative;
+            width: 50%;
+            padding-bottom: 3rem;
+        }
+        /* Odd entries go on the LEFT side */
+        .tl-entry:nth-child(odd) {
+            left: 0;
+            padding-right: 3.5rem;
+            text-align: right;
+        }
+        /* Even entries go on the RIGHT side */
+        .tl-entry:nth-child(even) {
+            left: 50%;
+            padding-left: 3.5rem;
+            text-align: left;
+        }
+
+        /* ── Dot on the vertical line ── */
+        .tl-dot {
+            position: absolute;
+            top: 0.6rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 9999px;
+            background-color: var(--bg-color);
+            border: 2.5px solid var(--accent-color);
+            z-index: 1;
+        }
+        .tl-entry:nth-child(odd)  .tl-dot { right: -0.5rem; }
+        .tl-entry:nth-child(even) .tl-dot { left:  -0.5rem; }
+        /* Future dot styling */
+        .tl-dot-future {
+            border-color: #9ca3af;
+            background-color: #f9fafb;
+        }
+
+        /* ── Date badge ── */
+        .tl-date {
+            display: inline-block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: white;
+            background-color: var(--accent-color);
+            border-radius: 9999px;
+            padding: 0.2rem 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+        .tl-date-future {
+            background-color: #6b7280;
+        }
+
+        /* ── Content card ── */
+        .tl-card {
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            padding: 1rem 1.25rem;
+            border-left: 4px solid var(--accent-color);
+            text-align: left;
+        }
+        .tl-card-future {
+            border-left-color: #9ca3af;
+        }
+        .tl-entry:nth-child(odd) .tl-card {
+            border-left: none;
+            border-right: 4px solid var(--accent-color);
+            text-align: right;
+        }
+        .tl-entry:nth-child(odd) .tl-card.tl-card-future {
+            border-right-color: #9ca3af;
+        }
+
+        .tl-card-icon {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            margin-bottom: 0.4rem;
+        }
+        .tl-card-future .tl-card-icon {
+            color: #9ca3af;
+        }
+        .tl-card p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #5a5a5a;
+            margin: 0;
+        }
+        .tl-card a {
+            font-weight: 700;
+        }
+
+        /* ── Mobile layout: single column ── */
+        @media (max-width: 767px) {
+            .tl-entry {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 3rem !important;
+                padding-right: 0 !important;
+                text-align: left !important;
+            }
+            .tl-entry:nth-child(odd)  .tl-dot,
+            .tl-entry:nth-child(even) .tl-dot {
+                left: 0.5rem;
+                right: auto;
+            }
+            .tl-entry:nth-child(odd) .tl-card {
+                border-left: 4px solid var(--accent-color);
+                border-right: none;
+                text-align: left;
+            }
+            .tl-entry:nth-child(odd) .tl-card.tl-card-future {
+                border-left-color: #9ca3af;
+                border-right: none;
+            }
+            .tl-date { display: block; text-align: left; }
+        }
+
+        /* ── Section divider label ── */
+        .tl-divider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0 2.5rem;
+        }
+        .tl-divider::before,
+        .tl-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background-color: var(--border-color);
+        }
+        .tl-divider span {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #9ca3af;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b" style="border-color: var(--border-color);">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-xl font-bold" style="color: var(--text-color);">Mauro Morais</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="index.html#research" class="hover:text-red-400 transition-colors duration-300" style="color: var(--text-color);">Research</a>
+                <a href="index.html#activities" class="hover:text-red-400 transition-colors duration-300" style="color: var(--text-color);">Activities</a>
+                <a href="https://www.linkedin.com/in/mauro-cafund%C3%B3-de-morais/" target="_blank" rel="noopener noreferrer" class="hover:text-red-400 transition-colors duration-300" style="color: var(--text-color);">News</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden" style="color: var(--text-color);">
+                <i class="fas fa-bars fa-lg"></i>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="index.html#research" class="block py-2">Research</a>
+            <a href="index.html#activities" class="block py-2">Activities</a>
+            <a href="https://www.linkedin.com/in/mauro-cafund%C3%B3-de-morais/" target="_blank" rel="noopener noreferrer" class="block py-2">News</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12 md:py-20">
+
+        <!-- Hero -->
+        <section class="text-center mb-16 fade-in-section">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4" style="color: var(--text-color);">Project Timeline</h1>
+            <p class="text-lg max-w-2xl mx-auto" style="color: #7a7a7a;">
+                A chronological account of milestones, discoveries, and future directions in the study of
+                climate-sensitive vector-borne diseases.
+            </p>
+        </section>
+
+        <!-- Past Events Timeline -->
+        <section class="mb-8">
+            <h2 class="section-header text-2xl font-bold text-center mb-12" style="color: var(--text-color);">Milestones</h2>
+
+            <div class="timeline-track max-w-4xl mx-auto">
+
+                <!-- Jan 2025 -->
+                <div class="tl-entry slide-left">
+                    <div class="tl-dot"></div>
+                    <span class="tl-date">Jan 2025</span>
+                    <div class="tl-card">
+                        <div class="tl-card-icon"><i class="fas fa-virus"></i></div>
+                        <p>
+                            Start of the project on climate-sensitive vector-borne diseases.
+                            Yellow fever outbreak in the State of São Paulo.
+                            This proposal aligns with the IPSP strategy.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Apr 2025 -->
+                <div class="tl-entry slide-right">
+                    <div class="tl-dot"></div>
+                    <span class="tl-date">Apr 2025</span>
+                    <div class="tl-card">
+                        <div class="tl-card-icon"><i class="fas fa-flask"></i></div>
+                        <p>
+                            Shift to studying West Nile Virus (WNV) following the Climate and Health conveening in Hong Kong.
+                            Preparation of a project aimed at studying how climatic factors affect the
+                            distribution of arboviruses using machine learning.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- May 2025 -->
+                <div class="tl-entry slide-left">
+                    <div class="tl-dot"></div>
+                    <span class="tl-date">May 2025</span>
+                    <div class="tl-card">
+                        <div class="tl-card-icon"><i class="fas fa-syringe"></i></div>
+                        <p>
+                            Vaccine refusal was the primary trigger for yellow fever cases, according
+                            to a <a href="https://saude.sp.gov.br/cve-centro-de-vigilancia-epidemiologica-prof.-alexandre-vranjac/areas-de-vigilancia/imunizacao/boletim-epidemiologico-febre-amarela" target="_blank">report</a> by the São Paulo State Health Secretariat.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Oct 2025 -->
+                <div class="tl-entry slide-right">
+                    <div class="tl-dot"></div>
+                    <span class="tl-date">Oct 2025</span>
+                    <div class="tl-card">
+                        <div class="tl-card-icon"><i class="fas fa-book-open"></i></div>
+                        <p>
+                            Article by Prof. William Souza's group (<a href="https://doi.org/10.1016/j.lana.2025.101229/" target="_blank">Lima et al.,
+                            <em>The Lancet Regional Health – Americas</em>, 2025</a>) on WNV circulation
+                            in Brazil and its relationship with the climate in Ceará (CE).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Nov 2025 -->
+                <div class="tl-entry slide-left">
+                    <div class="tl-dot"></div>
+                    <span class="tl-date">Nov 2025</span>
+                    <div class="tl-card">
+                        <div class="tl-card-icon"><i class="fas fa-comments"></i></div>
+                        <p>
+                            How should Brazil address vaccine refusal? The question arose following
+                            a discussion with Juan Carlo Ocampo during the <a href="./figures/idea_by_the_river.jpg" target="_blank">Global Health in the Amazon
+                            course</a> — disbelief in climate change is a phenomenon psychologically similar
+                            to vaccine hesitancy.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Dec 2025 -->
+                <div class="tl-entry slide-right">
+                    <div class="tl-dot"></div>
+                    <span class="tl-date">Dec 2025</span>
+                    <div class="tl-card">
+                        <div class="tl-card-icon"><i class="fas fa-shield-virus"></i></div>
+                        <p>
+                            <a href="https://sbim.org.br/noticias/anvisa-aprova-vacina-contra-a-dengue-do-instituto-butantan" target="_blank">ANVISA approves the Butantan-DV vaccine</a> for use in Brazil —
+                            a single-dose, live-attenuated preventive vaccine for individuals aged 12 to 59.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Jan–Feb 2026 -->
+                <div class="tl-entry slide-left">
+                    <div class="tl-dot"></div>
+                    <span class="tl-date">Jan – Feb 2026</span>
+                    <div class="tl-card">
+                        <div class="tl-card-icon"><i class="fas fa-temperature-high"></i></div>
+                        <p>
+                            Testing different modeling approaches for yellow fever risk and its
+                            association with temperature. The occurrence of 7 or more consecutive
+                            days with a minimum temperature above 17&nbsp;°C between April and
+                            September showed the strongest association.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Mar 2026 — Fujita -->
+                <div class="tl-entry slide-right">
+                    <div class="tl-dot"></div>
+                    <span class="tl-date">Mar 2026</span>
+                    <div class="tl-card">
+                        <div class="tl-card-icon"><i class="fas fa-search"></i></div>
+                        <p>
+                            While searching for studies on "climate hesitancy," found the work of
+                            <a href='https://doi.org/10.1093/jtm/taad166' target="_blank">Fujita et al. (2024)</a>, which identifies climate change as a factor
+                            responsible for shifts in the dengue serotype profile in Brazil.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Mar 2026 — COVISA -->
+                <div class="tl-entry slide-left">
+                    <div class="tl-dot"></div>
+                    <span class="tl-date">Mar 2026</span>
+                    <div class="tl-card">
+                        <div class="tl-card-icon"><i class="fas fa-map-marked-alt"></i></div>
+                        <p>
+                            Following a meeting with COVISA (Eduardo Masi, arbovirus surveillance
+                            in the municipality of São Paulo), identified the need for a dynamic,
+                            high-resolution (meter-scale) mapping and alert system for dengue
+                            monitoring — distinct from <a href="https://info.dengue.mat.br/" target="_blank">InfoDengue</a> which operates at the municipal level.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Apr 2026 -->
+                <div class="tl-entry slide-right">
+                    <div class="tl-dot"></div>
+                    <span class="tl-date">Apr 2026</span>
+                    <div class="tl-card">
+                        <div class="tl-card-icon"><i class="fas fa-handshake"></i></div>
+                        <p>
+                            Attended the <a href="https://www.enseignementsup-recherche.gouv.fr/fr/colloque-one-health-recommandations" target="_blank">One Health Summit</a> in Lyon, France, and partnership with
+                            Leonard Heyerdahl (IP Paris).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- May 2026 -->
+                <div class="tl-entry slide-left">
+                    <div class="tl-dot"></div>
+                    <span class="tl-date">May 2026</span>
+                    <div class="tl-card">
+                        <div class="tl-card-icon"><i class="fas fa-file-alt"></i></div>
+                        <p>
+                            Submission of an opinion piece regarding a "flaw" in the Phase 3 clinical
+                            trial of the Butantan-DV vaccine. Director of Immunization program at PAHO has expressed interest in methods
+                            for "social listening" of vaccine hesitancy in Brazil.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Jun 2026 -->
+                <div class="tl-entry slide-right">
+                    <div class="tl-dot"></div>
+                    <span class="tl-date">Jun 2026</span>
+                    <div class="tl-card">
+                        <div class="tl-card-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                        <p>
+                            The <a href="https://www.gov.br/anvisa/en/updates/anvisa-will-establish-a-panel-of-experts-to-deepen-the-epidemiological-investigation-about-the-butantan-dv-vaccine" target="_blank">Brazilian Ministry of Health temporarily suspends</a> the dengue
+                            vaccination strategy using Butantan-DV as a preventive measure following
+                            the observation of a few rare, unexpected events.
+                        </p>
+                    </div>
+                </div>
+
+            </div><!-- /timeline-track -->
+        </section>
+
+        <!-- Future Perspectives -->
+        <section class="mt-4">
+            <div class="tl-divider max-w-4xl mx-auto">
+                <span>Future Perspectives</span>
+            </div>
+
+            <div class="timeline-track timeline-track-future max-w-4xl mx-auto">
+
+                <!-- Jul 2026 -->
+                <div class="tl-entry slide-left">
+                    <div class="tl-dot tl-dot-future"></div>
+                    <span class="tl-date tl-date-future">Jul 2026</span>
+                    <div class="tl-card tl-card-future">
+                        <div class="tl-card-icon"><i class="fas fa-chart-line"></i></div>
+                        <p>
+                            New yellow fever modeling using the INLA model;
+                            manuscript preparation for publication.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Sep 2026 -->
+                <div class="tl-entry slide-right">
+                    <div class="tl-dot tl-dot-future"></div>
+                    <span class="tl-date tl-date-future">Sep 2026</span>
+                    <div class="tl-card tl-card-future">
+                        <div class="tl-card-icon"><i class="fas fa-handshake"></i></div>
+                        <p>
+                            Scientific meeting to establish new partnerships between IPSP and
+                            IP Montevideo (approved by FAPESP).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Nov 2026 -->
+                <div class="tl-entry slide-left">
+                    <div class="tl-dot tl-dot-future"></div>
+                    <span class="tl-date tl-date-future">Nov 2026</span>
+                    <div class="tl-card tl-card-future">
+                        <div class="tl-card-icon"><i class="fas fa-utensils"></i></div>
+                        <p>
+                            Participation in the PNAM (Pasteur Network Anual Meeting) event.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Open question -->
+                <div class="tl-entry slide-right">
+                    <div class="tl-dot tl-dot-future"></div>
+                    <span class="tl-date tl-date-future">Open question</span>
+                    <div class="tl-card tl-card-future">
+                        <div class="tl-card-icon"><i class="fas fa-lightbulb"></i></div>
+                        <p>
+                            How can social listening be linked to high-resolution dengue modeling?
+                            These are scientifically distinct approaches, yet they share common themes
+                            such as machine learning, dengue, and prevention. Social listening on
+                            digital networks may not be effective this year, however, as federal
+                            elections are taking place in Brazil (president, governors, state and
+                            federal deputies, and senators), and state-owned entities such as the
+                            Butantan Institute will not post on social media until the official
+                            campaign period concludes.
+                        </p>
+                    </div>
+                </div>
+
+            </div><!-- /timeline-track-future -->
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer style="background-color: #3a3a3a; color: #d1d1d1;">
+        <div class="mt-4 flex justify-center space-x-6 py-6">
+            <a href="mailto:mauro_morais@pasteur-sp-org.br" aria-label="Email" class="custom-link">
+                <i class="fas fa-envelope fa-2x"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/mauro-cafund%C3%B3-de-morais/" aria-label="LinkedIn" class="custom-link">
+                <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            <a href="https://github.com/mauroccm" aria-label="GitHub" class="custom-link">
+                <i class="fab fa-github fa-2x"></i>
+            </a>
+            <a href="https://scholar.google.com/citations?user=qs6DKacAAAAJ&hl=pt-BR" aria-label="Google Scholar" class="custom-link">
+                <i class="fas fa-graduation-cap fa-2x"></i>
+            </a>
+            <a href="https://orcid.org/0000-0003-4248-750X" aria-label="ORCID" class="custom-link">
+                <i class="fab fa-orcid fa-2x"></i>
+            </a>
+        </div>
+        <div class="container mx-auto px-6 py-6 text-center">
+            <p>&copy; <span id="year">2025</span> Mauro Morais. All Rights Reserved.</p>
+            <p class="text-sm mt-2" style="color: #a1a1a1;">Design with the help of LLM <span style="text-decoration: line-through;">fools</span> tools.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') mobileMenu.classList.add('hidden');
+        });
+
+        // Intersection Observer — handles both .fade-in-section, .slide-left, .slide-right
+        const animatedEls = document.querySelectorAll('.fade-in-section, .slide-left, .slide-right');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { root: null, rootMargin: '0px', threshold: 0.12 });
+
+        animatedEls.forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
